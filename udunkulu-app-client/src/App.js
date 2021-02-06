@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import SignIn from "./components/Home";
 // import SignIn from "./components/SignIn";
-import Navbar from "./components/Navbar";
+import Home from "./components/Home";
 // import { Route } from "react-router-dom";
 
 class App extends Component {
@@ -14,7 +14,7 @@ class App extends Component {
         <Route path="/login" component={Pricing} />
         <Route path="/login" component={SignIn} />
         <Route path="/signup" component={SignUp} /> */}
-        <Navbar />
+        <Home />
       </div>
     );
   }
