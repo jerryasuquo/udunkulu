@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 import Drum from "../assets/img/drum.png";
 import BoyFace from "../assets/img/boy-img.png";
 import SingingMan from "../assets/img/man-img.png";
@@ -19,7 +20,9 @@ class Home extends Component {
               Experience Nigerian music like never before with <br />
               <span>Udunkulu</span>
             </p>
-            <a>Start Listening</a>
+            <Link to="SignUp" className="hero-text-signup">
+              <a>Start Listening</a>
+            </Link>
           </article>
           <article className="hero-img-wrapper">
             <div className="col-1">

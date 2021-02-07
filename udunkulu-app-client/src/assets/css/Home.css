@@ -1,7 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
 #home {
     background-color: #DCEEF2;
     height: 86vh;
-    padding: 72px 80px;
+    padding: 4.5% 5% 0 4.5%;
     font-family: 'Open Sans', sans-serif;
     display: flex;
     justify-content: space-between;
@@ -9,7 +19,7 @@
 }
 
 .hero-text-wrapper {
-    padding-top: 100px;
+    padding-top: 6.25%;
     float: left;
 }
 
@@ -22,7 +32,7 @@
 
 .hero-text-wrapper p {
     font-size: 21.88px;
-    padding: 48px 0 40px 0;
+    padding: 9% 0 2.5rem 0;
 }
 
 .hero-text-wrapper p span {
@@ -30,11 +40,12 @@
     font-weight: 600;
 }
 
-.hero-text-wrapper a {
-    padding: 16px 24px;
+.hero-text-wrapper .hero-text-signup {
+    padding: 1rem 1.5rem;
     border-radius: 8px;
     background-color: #132F40;
     color: #FFC804;
+    text-decoration: none;
 }
 
 .hero-img-wrapper {
@@ -46,10 +57,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 34.82px;
+    margin-top: 1.55125rem;
 }
-
-/* .hero-img-wrapper .col-2 {
-    margin-top: 34.82px;
-} */
 
