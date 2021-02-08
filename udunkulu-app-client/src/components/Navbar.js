@@ -1,9 +1,15 @@
 import React, { Component } from "react";
+import {displaySigninModal} from '../ModalLogic';
 import Logo from "../assets/img/udunkulu-brand.png";
 import { Link } from "react-router-dom";
 import "../assets/css/Navbar.css";
 
 class Navbar extends Component {
+
+  displayModal = (e) => {
+    displaySigninModal();
+  }
+
   render() {
     return (
       <div>
@@ -34,11 +40,11 @@ class Navbar extends Component {
                 </li>
               </ul>
             </section>
-            <a className="nav-btn">
-              <Link to="SignIn" className="nav-btn-link">
+            <button className="nav-btn" onClick={this.displayModal}>
+              <Link to="" className="nav-btn-link">
                 Sign In
               </Link>
-            </a>
+            </button>
           </nav>
         </header>
       </div>

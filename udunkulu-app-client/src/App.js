@@ -1,20 +1,21 @@
 import React, { Component } from "react";
-// import SignIn from "./components/Home";
-// import SignIn from "./components/SignIn";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
 import Home from "./components/Home";
-// import { Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 class App extends Component {
   render() {
     return (
       <div>
-        {/* <Route exact path="/" component={Home} /> */}
+        <SignUp />
+        <SignIn />
+        <Route path="/" component={Home} />
         {/* <Route path="/login" component={HowItWorks} />
         <Route path="/signup" component={Artists} />
-        <Route path="/login" component={Pricing} />
-        <Route path="/login" component={SignIn} />
-        <Route path="/signup" component={SignUp} /> */}
-        <Home />
+        <Route path="/login" component={Pricing} />*/}
+        <Route path="/signin" component={SignIn} />
+        <Route path="/signup" component={SignUp} /> 
       </div>
     );
   }

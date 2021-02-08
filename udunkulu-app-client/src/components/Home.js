@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
+import {displaySignupModal} from '../ModalLogic';
 import { Link } from "react-router-dom";
 import Drum from "../assets/img/drum.png";
 import BoyFace from "../assets/img/boy-img.png";
@@ -9,6 +10,11 @@ import SingingGirl from "../assets/img/girl-img.png";
 import "../assets/css/Home.css";
 
 class Home extends Component {
+
+  displayModal = (e) => {
+    displaySignupModal();
+  }
+
   render() {
     return (
       <div>
@@ -20,8 +26,8 @@ class Home extends Component {
               Experience Nigerian music like never before with <br />
               <span>Udunkulu</span>
             </p>
-            <Link to="SignUp" className="hero-text-signup">
-              <a>Start Listening</a>
+            <Link to="" className="hero-text-signup" onClick={this.displayModal}>
+              Start Listening
             </Link>
           </article>
           <article className="hero-img-wrapper">
