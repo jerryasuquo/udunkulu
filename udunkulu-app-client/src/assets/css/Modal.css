@@ -1,0 +1,99 @@
+.modal-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background: rgba(0,0,0,0.5);
+  font-weight: 900;
+  z-index: 5;
+}
+
+.modal-hidden {
+  display: none;
+}
+
+.modal {
+  font-family: 'Open Sans';
+  position: relative;
+  display: flex;
+  width: 70%;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 12px;
+  background: white;
+}
+
+.modal .brand-text {
+  color: black;
+}
+
+.modal > img {
+  width: 50%;
+  border-radius: 0 12px 12px 0;
+}
+
+.modal-form , .modal-form form {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-form {
+  width: 40%;
+  height: 500px;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+.modal-form input {
+  width: 200%;
+  height: 48px;
+  padding: 0 1em;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #F1F0F0;
+}
+
+::placeholder {
+  color:  #222222;
+  opacity: 0.4;
+  text-align: justify;
+}
+
+.modal a {
+  color: #FFC804;
+  text-decoration: none;
+}
+
+
+.modal button {
+  width: 170%;
+  height: 48px;
+  margin-top: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #FFC804;
+}
+
+.modal button a {
+  color: #132F40;
+  font-weight: 700;
+}
+
+.iconContainer {
+  display: flex;
+  width: 25%;
+  justify-content: space-between;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 20px;
+  left: 95%;
+  color:  #FFC804;
+  font-size: 20px;
+  cursor: pointer;
+}
