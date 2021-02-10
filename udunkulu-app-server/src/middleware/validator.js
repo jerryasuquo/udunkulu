@@ -1,5 +1,4 @@
 const User = require('../api/models/user.model');
-const { use } = require('../api/routes/auth.route');
 
 module.exports = (req, res, next) => {
   const { email, password } = req.body;
