@@ -1,24 +1,27 @@
 import React, { Component } from "react";
+import Home from "./components/Home";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
-import Home from "./components/Home";
-import { Route } from "react-router-dom";
+import Recmd from "./components/Recmd";
+import { Switch, Route, useLocation } from "react-router-dom";
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <SignUp />
-        <SignIn />
-        <Route path="/" component={Home} />
-        {/* <Route path="/login" component={HowItWorks} />
-        <Route path="/signup" component={Artists} />
-        <Route path="/login" component={Pricing} />*/}
-        <Route path="/signin" component={SignIn} />
-        <Route path="/signup" component={SignUp} /> 
-      </div>
-    );
-  }
+let App = () => {
+  const location = useLocation();
+  const background = location.state && location.state.background;
+
+  return (
+    <div>
+      <Switch location={background || location}>
+        <Route exact path="/" component={Home} />
+        {/* <Route exact path="/login" component={HowItWorks} />
+        <Route exact path="/artists" component={Artists} />
+        <Route exact path="/pricing" component={Pricing} />*/}
+        <Route exact path='/recmds' component={Recmd} />
+      </Switch>
+      {background && <Route exact path="/signup" children={<SignUp/>}  />}
+      {background && <Route exact path="/signin" children={<SignIn/>}  />}
+    </div>
+  );
 }
 
 export default App;
