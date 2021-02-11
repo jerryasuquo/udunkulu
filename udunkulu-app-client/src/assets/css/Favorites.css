@@ -1,13 +1,8 @@
-/* #browse {
-    margin-top: -574px;
-    float: left;
-} */
-
-#browse .card-main-topmost {
+.card-main-topmost {
     margin-top: 10px;
 }
 
-#browse .card-main-topmost,
+.card-main-topmost,
 .card-main-bottom {
     padding: 48px 0 0 52px;
     width: 81vw;
@@ -20,31 +15,31 @@
     font-weight: bold;
 }
 
-#browse .card-box {
+.card-box {
     padding: 17px 0;
     margin-top: 16px;
 }
 
-#browse .card {
+.card {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-#browse .card img {
+.card img {
     margin-right: 16px;
 }
 
-#browse .card img:hover {
+.card img:hover {
     cursor: pointer;
 }
 
-#browse .card-next-btn {
+.card-next-btn {
     position: absolute;
     margin-top: 100px;
     right: 50px;
 }
 
-#browse .card-next-btn:hover {
+.card-next-btn:hover {
     cursor: pointer;
 }

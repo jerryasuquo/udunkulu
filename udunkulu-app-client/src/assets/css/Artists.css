@@ -1,14 +1,9 @@
-/* #browse {
-    margin-top: -574px;
-    float: left;
-} */
-
-#browse .card-main-topmost {
+#artists .card-main-topmost {
     margin-top: 10px;
 }
 
-#browse .card-main-topmost,
-.card-main-bottom {
+#artists .card-main-topmost,
+#artists .card-main-bottom {
     padding: 48px 0 0 52px;
     width: 81vw;
     float: right;
@@ -20,31 +15,37 @@
     font-weight: bold;
 }
 
-#browse .card-box {
+#artists .card-box {
     padding: 17px 0;
     margin-top: 16px;
 }
 
-#browse .card {
+#artists .card {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
+    flex-wrap: wrap;
 }
 
-#browse .card img {
+#artists p {
+    margin-bottom: -32px;
+}
+
+#artists .card img {
     margin-right: 16px;
+    margin-top: 32px;
 }
 
-#browse .card img:hover {
+#artists .card img:hover {
     cursor: pointer;
 }
 
-#browse .card-next-btn {
+#artists .card-next-btn {
     position: absolute;
     margin-top: 100px;
     right: 50px;
 }
 
-#browse .card-next-btn:hover {
+#artists .card-next-btn:hover {
     cursor: pointer;
 }

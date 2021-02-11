@@ -30,7 +30,7 @@ export default class LibraryNav extends Component {
               </form>
             </section>
           </div>
-          <div>
+          <div className="user-main">
             <section className="user">
               <p>
                 Welcome back, <span>Eren</span>

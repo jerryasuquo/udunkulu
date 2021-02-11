@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import LibraryNav from "./LibraryNav";
+import { Link } from "react-router-dom";
 import Browse from "../assets/img/browse.png";
 import Albums from "../assets/img/albums.png";
 import Artists from "../assets/img/artists.png";
@@ -13,22 +13,30 @@ class Dashboard extends Component {
         <section className="dashboard-main">
           <div className="dashboard-nav dashboard-browse">
             <img src={Browse} />
-            <span>Browse</span>
+            <Link to="/browse" className="link">
+              <span>Browse</span>
+            </Link>
           </div>
           <div className="dashboard-nav">
             <img src={Albums} />
-            <span>Albums</span>
+            <Link to="/albums" className="link">
+              <span>Albums</span>
+            </Link>
           </div>
           <div className="dashboard-nav">
             <img src={Artists} />
-            <span>Artists</span>
+            <Link to="/artists" className="link">
+              <span>Artists</span>
+            </Link>
           </div>
         </section>
         <section className="my-music">
           <p className="dashboard-nav">My Music</p>
           <div className="dashboard-nav">
             <img src={Favorites} />
-            <span>Favorites</span>
+            <Link to="/favorites" className="link">
+              <span>Favorites</span>
+            </Link>
           </div>
         </section>
       </div>
