@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import SignIn from "./components/SignIn";
 // import SignUp from "./components/SignUp";
-// import Home from "./components/Home";
+import Home from "./components/Home";
 // import LibraryNav from "./components/LibraryNav";
 // import Dashboard from "./components/Dashboard";
 import Browse from "./components/Browse";
@@ -15,6 +15,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Route exact path="/" component={Home} />
         <Route path="/browse" component={Browse} />
         <Route path="/albums" component={Albums} />
         <Route path="/artists" component={Artists} />

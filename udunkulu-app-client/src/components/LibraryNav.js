@@ -7,7 +7,7 @@ import "../assets/css/LibraryNav.css";
 export default class LibraryNav extends Component {
   render() {
     return (
-      <header>
+      <header id="lib-nav">
         <nav>
           <div className="brand">
             <section className="menu">

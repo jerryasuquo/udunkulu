@@ -8,11 +8,11 @@ html {
     font-size: 16px;
 }
 
-header {
+header#lib-nav {
     padding: 1.5rem 2.5625rem 0.875rem 2.5625rem;
 }
 
-nav {
+#lib-nav nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,27 +22,28 @@ section {
     float: left;
 }
 
-.menu i {
+#lib-nav .menu i {
     padding: 0.75rem 1rem 0 0;
     font-size: 18px;
     cursor: pointer;
+    color: #000;
 }
 
-.brand {
+#lib-nav .brand {
     position: relative;
     top: 5px;
 }
 
-.brand-wrapper img,
-.brand-wrapper p {
+#lib-nav .brand-wrapper img,
+#lib-nav .brand-wrapper p {
     float: left;
 }
 
-.brand-logo {
+#lib-nav .brand-logo {
     margin-top: -.5rem;
 }
 
-.brand-text {
+#lib-nav .brand-text {
     padding: .5rem 0 0.875rem .5rem;
     font-family: 'PT Sans',
     sans-serif;
@@ -52,7 +53,7 @@ section {
     letter-spacing: 0.5%;
 }
 
-.search form input {
+#lib-nav .search form input {
     height: 3rem;
     width: 28.125rem;
     border: none;
@@ -61,7 +62,7 @@ section {
     float: right;
 }
 
-.search form input[placeholder="Search"] {
+#lib-nav .search form input[placeholder="Search"] {
     background-color: #F1F0F0;
     color: #609bbf66;
     font-size: 14px;
@@ -71,7 +72,7 @@ section {
     padding-left: 24.74px;
 }
 
-.search span {
+#lib-nav .search span {
     background-color: #295773;
     width: 54px;
     height: 48px;
@@ -83,7 +84,7 @@ section {
     cursor: pointer;
 }
 
-.search span i {
+#lib-nav .search span i {
     color: #8FC4D9;
     font-size: 17.49px;
     position: relative;
@@ -91,31 +92,31 @@ section {
     left: 17.185px;
 }
 
-.user-main {
+#lib-nav .user-main {
     position: relative;
     top: 10px;
 }
 
-.user {
+#lib-nav .user {
     margin-right: 1.75rem;
 }
 
-.user p {
+#lib-nav .user p {
     font-size: 17.5px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     color: #295773;
 }
 
-.user p>span {
+#lib-nav .user p>span {
     color: #FFC804;
 }
 
-.user-select {
+#lib-nav .user-select {
     margin-top: -10px;
 }
 
-.user-select select {
+#lib-nav .user-select select {
     background-color: #DCEEF2;
     border: none;
     position: relative;
