@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import LibraryNav from "./LibraryNav";
-import Dashboard from "./Dashboard";
+import ArtistsMenu from "./ArtistsMenu";
 import "../assets/css/Artists.css";
 import WizKid from "../assets/img/wizkid.png";
 
-class Browse extends Component {
+class Artists extends Component {
   render() {
     return (
       <div>
         <LibraryNav />
-        <Dashboard />
+        <ArtistsMenu />
         <div id="artists">
           <section className="card-main-topmost">
             <p>Your Favorite Artists</p>
@@ -30,4 +30,4 @@ class Browse extends Component {
   }
 }
 
-export default Browse;
+export default Artists;
