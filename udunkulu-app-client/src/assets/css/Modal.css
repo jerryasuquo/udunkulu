@@ -47,7 +47,8 @@
   margin: 0 auto;
   justify-content: space-around;
 }
-.modal-form input {
+
+.modal-form input, select {
   width: 200%;
   height: 48px;
   padding: 0 1em;
@@ -57,7 +58,25 @@
   background: #F1F0F0;
 }
 
-::placeholder {
+.label {
+  display: flex;
+  font-size: 0.8em;
+  position: relative;
+  left: -70%;
+  font-size: 0.8em;
+}
+
+.flex {
+  left: -45%;
+}
+
+input[type = checkbox] {
+  width: 15px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+::placeholder, label {
   color:  #222222;
   opacity: 0.4;
   text-align: justify;

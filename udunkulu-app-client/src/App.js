@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Home from "./components/Home";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
+import ArtistSignUp from "./components/ArtistSignUp";
 import Browse from "./components/Browse";
 import Albums from "./components/Albums";
 import Artists from "./components/Artists";
@@ -27,6 +28,7 @@ let App = () => {
       </Switch>
       {background && <Route exact path="/signup" children={<SignUp/>}  />}
       {background && <Route exact path="/signin" children={<SignIn/>}  />}
+      {background && <Route exact path="/artists-signup" children={<ArtistSignUp/>}  />}
     </div>
   );
 }
