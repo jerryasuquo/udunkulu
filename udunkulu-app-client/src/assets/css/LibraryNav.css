@@ -1,0 +1,126 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+header#lib-nav {
+    padding: 1.5rem 2.5625rem 0.875rem 2.5625rem;
+}
+
+#lib-nav nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section {
+    float: left;
+}
+
+#lib-nav .menu i {
+    padding: 0.75rem 1rem 0 0;
+    font-size: 18px;
+    cursor: pointer;
+    color: #000;
+}
+
+#lib-nav .brand {
+    position: relative;
+    top: 5px;
+}
+
+#lib-nav .brand-wrapper img,
+#lib-nav .brand-wrapper p {
+    float: left;
+}
+
+#lib-nav .brand-logo {
+    margin-top: -.5rem;
+}
+
+#lib-nav .brand-text {
+    padding: .5rem 0 0.875rem .5rem;
+    font-family: 'PT Sans',
+    sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: #295773;
+    letter-spacing: 0.5%;
+}
+
+#lib-nav .search form input {
+    height: 3rem;
+    width: 28.125rem;
+    border: none;
+    border-radius: 10px;
+    color: #609bbf66;
+    float: right;
+}
+
+#lib-nav .search form input[placeholder="Search"] {
+    background-color: #F1F0F0;
+    color: #609bbf66;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Open Sans',
+    sans-serif;
+    padding-left: 24.74px;
+}
+
+#lib-nav .search span {
+    background-color: #295773;
+    width: 54px;
+    height: 48px;
+    display: inline-block;
+    position: absolute;
+    margin-left: 395px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+}
+
+#lib-nav .search span i {
+    color: #8FC4D9;
+    font-size: 17.49px;
+    position: relative;
+    top: 15px;
+    left: 17.185px;
+}
+
+#lib-nav .user-main {
+    position: relative;
+    top: 10px;
+}
+
+#lib-nav .user {
+    margin-right: 1.75rem;
+}
+
+#lib-nav .user p {
+    font-size: 17.5px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    color: #295773;
+}
+
+#lib-nav .user p>span {
+    color: #FFC804;
+}
+
+#lib-nav .user-select {
+    margin-top: -10px;
+}
+
+#lib-nav .user-select select {
+    background-color: #DCEEF2;
+    border: none;
+    position: relative;
+    bottom: 15px;
+    left: 4px;
+    cursor: pointer;
+}
