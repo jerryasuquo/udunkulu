@@ -1,6 +1,5 @@
 .dashboard {
     width: 230px;
-    /* height: 594px; */
     padding-top: 24px;
 }
 
@@ -13,8 +12,9 @@
     cursor: pointer;
 }
 
-.dashboard-browse {
+.dashboard-favorites {
     background-color: #609BBF;
+    position: absolute;
 }
 
 .dashboard-nav img {
@@ -51,10 +51,4 @@
 
 .my-music p:hover {
     cursor: default;
-}
-
-.my-music span {
-    position: relative;
-    bottom: 26.5px;
-    left: 22px;
 }
