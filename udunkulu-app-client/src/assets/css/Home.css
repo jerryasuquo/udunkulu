@@ -49,7 +49,10 @@ html {
 }
 
 .hero-img-wrapper {
-    float: left;
+    /* Updated this style */
+    float: right;
+    position: absolute;
+    left: 760px;
 }
 
 .hero-img-wrapper .col-1,
