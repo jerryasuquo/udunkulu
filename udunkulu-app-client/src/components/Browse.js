@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import LibraryNav from "./LibraryNav";
 import Dashboard from "./Dashboard";
 import "../assets/css/Browse.css";
 import KissDaniel from "../assets/img/kiss-daniel.png";
 import NextBtn from "../assets/img/next-button.png";
 
-let Browse = ()  => {
+let Browse = () => {
   return (
     <div>
       <LibraryNav />
@@ -74,6 +74,6 @@ let Browse = ()  => {
       </div>
     </div>
   );
-}
+};
 
 export default Browse;

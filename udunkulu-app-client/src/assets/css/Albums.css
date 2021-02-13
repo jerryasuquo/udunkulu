@@ -1,3 +1,8 @@
+#albums {
+    position: absolute;
+    top: 300px;
+}
+
 #albums .card-main-topmost {
     margin-top: 10px;
 }
@@ -42,4 +47,8 @@
 
 #albums .card-next-btn:hover {
     cursor: pointer;
+}
+
+#albums .link-extended {
+    cursor: default;
 }

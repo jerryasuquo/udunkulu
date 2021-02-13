@@ -10,12 +10,15 @@ html {
 
 header#lib-nav {
     padding: 1.5rem 2.5625rem 0.875rem 2.5625rem;
+    height: 15vh;
 }
 
 #lib-nav nav {
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 500;
 }
 
 section {
@@ -46,11 +49,15 @@ section {
 #lib-nav .brand-text {
     padding: .5rem 0 0.875rem .5rem;
     font-family: 'PT Sans',
-    sans-serif;
+        sans-serif;
     font-weight: bold;
     font-size: 18px;
     color: #295773;
     letter-spacing: 0.5%;
+}
+
+#lib-nav .search form {
+    margin: 0 145px 0 241px;
 }
 
 #lib-nav .search form input {
@@ -68,7 +75,7 @@ section {
     font-size: 14px;
     font-weight: 600;
     font-family: 'Open Sans',
-    sans-serif;
+        sans-serif;
     padding-left: 24.74px;
 }
 
@@ -78,7 +85,7 @@ section {
     height: 48px;
     display: inline-block;
     position: absolute;
-    margin-left: 395px;
+    margin-left: 397px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     cursor: pointer;
@@ -119,8 +126,11 @@ section {
 #lib-nav .user-select select {
     background-color: #DCEEF2;
     border: none;
+    border-radius: 0px;
     position: relative;
     bottom: 15px;
     left: 4px;
     cursor: pointer;
+    width: 0;
+    height: auto;
 }

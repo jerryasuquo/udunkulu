@@ -11,16 +11,12 @@ html {
 #home {
     background-color: #DCEEF2;
     height: 86vh;
-    padding: 4.5% 5% 0 4.5%;
+    padding: 5% 5% 0 4.5%;
     font-family: 'Open Sans', sans-serif;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
 }
 
 .hero-text-wrapper {
-    padding-top: 6.25%;
+    padding-top: 104px;
     float: left;
 }
 
@@ -33,7 +29,7 @@ html {
 
 .hero-text-wrapper p {
     font-size: 21.88px;
-    padding: 9% 0 2.5rem 0;
+    margin: 40px 0 68px 0;
 }
 
 .hero-text-wrapper p span {
@@ -50,17 +46,34 @@ html {
 }
 
 .hero-img-wrapper {
-    /* Updated this style */
     float: right;
     position: absolute;
-    left: 760px;
+    left: 720px;
 }
 
-.hero-img-wrapper .col-1,
-.hero-img-wrapper .col-2 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1.55125rem;
+.row-1 .col-1 {
+    float: left;
+    margin-right: 35.91px;
 }
 
+.row-1 .col-2 {
+    float: right;
+}
+
+.row-2 {
+    position: relative;
+    top: 29.82px;
+}
+
+.row-2 .col-1 .col-1-1 {
+    float: left;
+    margin-right: 45.91px;
+}
+
+.row-2 .col-1 .col-1-2 {
+    float: left;
+}
+
+.row-2 .col-2 {
+    float: right;
+}

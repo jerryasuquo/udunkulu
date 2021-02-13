@@ -8,7 +8,7 @@ import "../assets/css/Dashboard.css";
 
 let Dashboard = () => {
   return (
-    <div className="dashboard">
+    <div id="browse-dashboard">
       <section className="dashboard-main">
         <div className="dashboard-nav dashboard-browse">
           <img src={Browse} />
@@ -40,6 +40,6 @@ let Dashboard = () => {
       </section>
     </div>
   );
-}
+};
 
 export default Dashboard;
