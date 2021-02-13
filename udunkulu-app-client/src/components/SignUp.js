@@ -25,7 +25,7 @@ let SignUp = () => {
 
   let handleSubmit = (e) => {
     e.preventDefault();
-    loaderRef.current.setAttribute('class', 'loader')
+    loaderRef.current.setAttribute('class', 'loader');
     let user = {email: state.email, fullname: state.fullname, password: state.password};
 
     fetch('https://udunkulu.herokuapp.com/api/v1/signup',{
