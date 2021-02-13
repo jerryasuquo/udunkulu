@@ -1,19 +1,18 @@
 import React from "react";
-import LibraryNav  from "./LibraryNav";
+import LibraryNav from "./LibraryNav";
 import FavoritesMenu from "./FavoritesMenu";
 import "../assets/css/Favorites.css";
 import KissDaniel from "../assets/img/kiss-daniel.png";
 import NextBtn from "../assets/img/next-button.png";
-import FavoritesIcon from '../assets/img/favorites.png';
-import More from '../assets/img/more-vert.png';
+import FavoritesIcon from "../assets/img/favorites.png";
+import More from "../assets/img/more-vert.png";
 import { Link } from "react-router-dom";
 
- let Favorites = () => {
+let Favorites = () => {
   return (
     <div>
       <LibraryNav />
       <FavoritesMenu />
-
       <section className="card-main-topmost">
         <p>Albums</p>
         <div className="card-box">
@@ -29,9 +28,9 @@ import { Link } from "react-router-dom";
 
       <section className="card-main-topmost">
         <p>Tracks</p>
-        <div className='tracklist card-box'>
-          <div className='track'>
-            <Link to='#'>
+        <div className="tracklist card-box">
+          <div className="track">
+            <Link to="#">
               <img src={KissDaniel} />
               <span>Mama</span>
               <span>Kiss Daniel</span>
@@ -42,8 +41,8 @@ import { Link } from "react-router-dom";
               <img src={More} />
             </Link>
           </div>
-          <div className='track'>
-          <Link to='#'>
+          <div className="track">
+            <Link to="#">
               <img src={KissDaniel} />
               <span>Mama</span>
               <span>Kiss Daniel</span>
@@ -54,8 +53,8 @@ import { Link } from "react-router-dom";
               <img src={More} />
             </Link>
           </div>
-          <div className='track'>
-          <Link to='#'>
+          <div className="track">
+            <Link to="#">
               <img src={KissDaniel} />
               <span>Mama</span>
               <span>Kiss Daniel</span>
@@ -66,8 +65,8 @@ import { Link } from "react-router-dom";
               <img src={More} />
             </Link>
           </div>
-          <div className='track'>
-          <Link to='#'>
+          <div className="track">
+            <Link to="#">
               <img src={KissDaniel} />
               <span>Mama</span>
               <span>Kiss Daniel</span>
@@ -81,7 +80,7 @@ import { Link } from "react-router-dom";
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
 export default Favorites;
