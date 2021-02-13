@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import { Link, useLocation} from "react-router-dom";
 import { displaySignup, close } from '../ModalLogic';
 import "../assets/css/Modal.css";
@@ -6,9 +6,11 @@ import SigninImg from '../assets/img/signin-img.png';
 import Logo from '../assets/img/udunkulu-brand.png';
 import Facebook from '../assets/img/facebook-brand.png';
 import Google from '../assets/img/google-brand.png';
+import Loader from '../assets/img/loader.gif';
 
 let SignIn = () => {
   let location = useLocation();
+  let loaderRef = useRef();
 
   const [state, setState] = useState({
     email: '',
@@ -22,6 +24,7 @@ let SignIn = () => {
 
   let handleSubmit = (e) => {
     e.preventDefault();
+    loaderRef.current.setAttribute('class', 'loader');
     let user = {email: state.email, password: state.password};
 
     fetch('https://udunkulu.herokuapp.com/api/v1/login',{
@@ -35,8 +38,10 @@ let SignIn = () => {
     .then((res) => {if (!res.success) {
       console.log(res.message);
       this.setState({...state, res: res.message});
+      loaderRef.current.setAttribute('class', 'none')
     } else {
-      window.location = '/recmds';
+      loaderRef.current.setAttribute('class', 'none')
+      window.location = '/browse';
       }
     })
     .catch((e) => {
@@ -57,6 +62,7 @@ let SignIn = () => {
 
   return (
     <section id='modal-wrapper-signin' onClick={closeModal}>
+      <div ref={loaderRef} className='none'><img src={Loader} alt='Loader gif' /></div>
       <div id='modal-hidden-signin' className='modal-hidden' onClick={e => e.stopPropagation()}>
         <div className='modal-form'>
 
