@@ -17,7 +17,7 @@ let Albums = () => {
           <div className="card-box">
             <img src={NextBtn} className="card-next-btn" />
             <div className="card">
-              <Link to="/simisola" className="link-extended">
+              <Link to="/albums-simisola" className="link-extended">
                 <img src={KissDaniel} />
                 <img src={KissDaniel} />
                 <img src={KissDaniel} />
@@ -32,7 +32,7 @@ let Albums = () => {
             <img src={NextBtn} className="card-next-btn" />
           </div>
           <div className="card">
-            <Link to="/simisola" className="link-extended">
+            <Link to="/albums-simisola" className="link-extended">
               <img src={KissDaniel} />
               <img src={KissDaniel} />
               <img src={KissDaniel} />

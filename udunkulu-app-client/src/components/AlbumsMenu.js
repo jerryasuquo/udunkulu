@@ -6,7 +6,7 @@ import Artists from "../assets/img/artists.png";
 import Favorites from "../assets/img/favorites.png";
 import "../assets/css/AlbumsMenu.css";
 
-let AlbumsMenu = () => {
+const AlbumsMenu = () => {
   return (
     <div id="albums-dashboard">
       <section className="dashboard-main">

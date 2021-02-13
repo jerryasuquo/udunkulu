@@ -2,6 +2,7 @@
     width: 240px;
     padding-top: 24px;
     position: fixed;
+    z-index: 500;
 }
 
 #albums-dashboard .dashboard-nav {
