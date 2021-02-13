@@ -13,6 +13,7 @@
     font-size: 27.34px;
     font-family: 'PT Sans', sans-serif;
     font-weight: bold;
+    color: #282424;
 }
 
 .card-box {
@@ -42,4 +43,31 @@
 
 .card-next-btn:hover {
     cursor: pointer;
+}
+
+.tracklist {
+    display: flex;
+    flex-direction: column;
+}
+
+.track {
+    background: #8FC4D9;
+    width: 75vw;
+    height: 60px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.track > a  {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-decoration: none;
+    color: #282424;
+    font-size: 14px;
+}
+
+.track > a > img:first-of-type {
+    max-height: 40px;
+    margin-top: 10px;
 }

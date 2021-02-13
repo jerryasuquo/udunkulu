@@ -53,7 +53,6 @@ let SignIn = () => {
 
   let closeModal = (e) => {
     close();
-    window.location = '/';
   }
 
   return (

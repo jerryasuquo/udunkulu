@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
+import ArtistSignUp from "./ArtistSignUp";
 import { displaySignup } from '../ModalLogic';
 import { Link, useLocation } from "react-router-dom";
 import Drum from "../assets/img/drum.png";
@@ -10,6 +11,7 @@ import SingingMan from "../assets/img/man-img.png";
 import Woman from "../assets/img/woman.png";
 import SingingGirl from "../assets/img/girl-img.png";
 import "../assets/css/Home.css";
+
 
 let Home = () => {
   let location = useLocation();
@@ -23,6 +25,7 @@ let Home = () => {
       <Navbar />
       <SignUp />
       <SignIn />
+      <ArtistSignUp />
       <section id="home">
         <article className="hero-text-wrapper">
           <h1>Beats, Sound, Rhythm, Vocals.</h1>
