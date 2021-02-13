@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { displaySignin, close } from '../ModalLogic';
 import "../assets/css/Modal.css";
@@ -6,9 +6,11 @@ import SignupImg from '../assets/img/signup-artists-img.png';
 import Logo from '../assets/img/udunkulu-brand.png';
 import Facebook from '../assets/img/facebook-brand.png';
 import Google from '../assets/img/google-brand.png';
+import Loader from '../assets/img/loader.gif';
 
 let ArtistSignUp = () => {
   let location = useLocation();
+  let loaderRef = useRef();
 
   const [state, setState] = useState({
     email: '',
@@ -25,17 +27,16 @@ let ArtistSignUp = () => {
     if (e.target.name === 'agree') {
       let agree = state.agree ? false : true;
       setState({...state, agree: agree});
-      console.log(state);
       return 0;
     }
     setState({...state, [e.target.name]: e.target.value});
-    console.log(state);
   }
 
   let handleSubmit = (e) => {
     e.preventDefault();
-
     if (state.agree) {
+    if (state.password === state.confirmPass) {
+    loaderRef.current.setAttribute('class', 'loader')
     let user = {
               email: state.email,
               fullname: state.fullname,
@@ -55,7 +56,9 @@ let ArtistSignUp = () => {
     .then((res) => {if (!res.success) {
       console.log(res);
       setState({...state, res: res.message});
+      loaderRef.current.setAttribute('class', 'none')
     } else {
+      loaderRef.current.setAttribute('class', 'none')
       displaySigninModal();
       }
     })
@@ -63,6 +66,7 @@ let ArtistSignUp = () => {
       console.log(e.message);
       setState({...state, res: 'Failed to signup. Try again.'});
     })
+    } else setState({...state, res: 'Passwords do not match'});
     } else setState({...state, res: 'Agree to the Terms and Conditions.'});
   }
 
@@ -77,6 +81,7 @@ let ArtistSignUp = () => {
 
   return (
     <section id='modal-wrapper-arists-signup' onClick={closeModal}>
+      <div ref={loaderRef} className='none'><img src={Loader} alt='Loader gif' /></div>
       <div id='modal-hidden-artists-signup' className='modal-hidden' onClick={e => e.stopPropagation()}>
         <div className='modal-form'>
             
