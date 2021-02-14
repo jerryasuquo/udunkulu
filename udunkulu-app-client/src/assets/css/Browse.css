@@ -1,7 +1,7 @@
 /* #browse {
-    margin-top: -574px;
-    float: left;
-} */
+    position: absolute;
+    top: 300px;
+}
 
 #browse .card-main-topmost {
     margin-top: 10px;
@@ -12,7 +12,6 @@
     padding: 48px 0 0 52px;
     width: 81vw;
     float: right;
-    /* height: 100%; */
     position: relative;
     bottom: 200px;
     font-size: 27.34px;
@@ -47,4 +46,33 @@
 
 #browse .card-next-btn:hover {
     cursor: pointer;
+} */
+
+#browse {
+    position: relative;
+    margin-left: 295px;
+    padding-top: 5px;
+    padding-bottom: 137px;
+}
+
+#browse p {
+    padding: 48px 0 0 0;
+    font-size: 27.34px;
+    font-family: 'PT Sans',
+    sans-serif;
+    font-weight: bold;
+}
+
+/* external css: flickity.css */
+
+.gallery {
+    width: 96%;
+}
+
+.gallery-cell {
+    width: 25%;
+    margin-right: -30px;
+    height: 325px;
+    position: absolute;
+    bottom: -33px;
 }

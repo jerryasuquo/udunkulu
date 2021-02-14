@@ -1,33 +1,35 @@
-.dashboard {
-    width: 230px;
+#albums-dashboard {
+    width: 240px;
     padding-top: 24px;
+    position: fixed;
+    z-index: 500;
 }
 
-.dashboard-nav {
+#albums-dashboard .dashboard-nav {
     padding: 8px 100px 12px 44px;
     margin-top: 4px;
 }
 
-.dashboard-nav:hover {
+#albums-dashboard .dashboard-nav:hover {
     cursor: pointer;
 }
 
-.dashboard-albums {
+#albums-dashboard .dashboard-albums {
     background-color: #609BBF;
 }
 
-.dashboard-nav img {
+#albums-dashboard .dashboard-nav img {
     width: 24px;
     height: 24px;
     margin-top: 6.5px;
 }
 
-.link {
+#albums-dashboard .link {
     text-decoration: none;
     color: #000000;
 }
 
-.dashboard-nav span {
+#albums-dashboard .dashboard-nav span {
     margin-left: 12px;
     position: relative;
     bottom: 6.5px;
@@ -36,11 +38,11 @@
     font-weight: 600;
 }
 
-.my-music {
+#albums-dashboard .my-music {
     margin: 64px 0 0 0;
 }
 
-.my-music p {
+#albums-dashboard .my-music p {
     color: #132F40;
     font-size: 14px;
     font-family: 'Open Sans',
@@ -48,12 +50,12 @@
     font-weight: 600;
 }
 
-.my-music p:hover {
+#albums-dashboard .my-music p:hover {
     cursor: default;
 }
 
-.my-music span {
+/* #albums-dashboard .my-music span {
     position: relative;
     bottom: 26.5px;
     left: 22px;
-}
+} */

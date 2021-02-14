@@ -1,0 +1,104 @@
+#artists-extended {
+    position: absolute;
+    left: 232px;
+}
+
+#artists-extended .artists-extended-img {
+    width: 1006px;
+    margin-left: 52px;
+}
+
+#artists-extended .artists-extended-top {
+    margin-top: 64px;
+}
+
+#artists-extended .artists-extended-top .art-cover {
+    float: left;
+    position: relative;
+    margin: -170px 51px 72px 100px;
+}
+
+#artists-extended .artists-extended-top .art-details {
+    float: right;
+    margin-top: -46px;
+}
+
+#artists-extended .art-details-desc {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+    padding: 16px 0 34px 0;
+}
+
+#artists-extended .art-details-link {
+    color: #132F40;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 5px;
+}
+
+#artists-extended .art-details-link a {
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+#artists-extended .art-details-btns {
+    font-size: 17px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#artists-extended .art-details-favorite-box:hover {
+    cursor: pointer;
+}
+
+#artists-extended .art-details-favorite {
+    color: #132F40;
+}
+
+#artists-extended .art-details-favorite-box {
+    padding: 14px 68.5px 14px 54px;
+    border: 2px solid #FFC804;
+    border-radius: 8px;
+}
+
+#artists-extended .art-details-favorite-box img {
+    position: relative;
+    top: 5px;
+    margin-right: 7.5px;
+}
+
+#artists-extended .art-details-desc {
+    width: 532px;
+}
+
+#artists-extended .artists-extended-bottom {
+    clear: both;
+    margin-top: 60px;
+    margin-left: 52px;
+    padding-bottom: 174px;
+}
+
+#artists-extended .artists-extended-bottom p {
+    padding-bottom: 43px;
+}
+
+#artists-extended .artists-extended-bottom p, .art-details-title {
+    font-size: 27.34px;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 700;
+}
+
+#artists-extended .artists-extended-bottom img {
+    width: 1008px;
+}
+
+#artists-extended .artists-extended-bottom .see-more {
+    padding: 16px;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    color: #132F40;
+    cursor: pointer;
+}

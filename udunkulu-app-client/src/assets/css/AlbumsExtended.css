@@ -1,0 +1,112 @@
+#albums-extended {
+    position: absolute;
+    left: 232px;
+}
+
+#albums-extended .albums-extended-top {
+    margin-top: 64px;
+}
+
+#albums-extended .albums-extended-top .art-cover {
+    float: left;
+    margin: 0 64px 72px 52px;
+}
+
+#albums-extended .albums-extended-top .art-details {
+    float: right;
+}
+
+#albums-extended .art-details-info {
+    padding: 16px 0;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#albums-extended .art-details-desc {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#albums-extended .art-details-link {
+    margin-top: 8px;
+    color: #132F40;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom: 32px;
+}
+
+#albums-extended .art-details-link a {
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+#albums-extended .art-details-btns {
+    font-size: 17px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#albums-extended .art-details-play-box {
+    background-color: #132F40;
+    padding: 16px 43px 16px 28px;
+    margin-right: 24px;
+    border: none;
+    border-radius: 8px;
+}
+
+#albums-extended .art-details-play-box:hover, .art-details-favorite-box:hover {
+    cursor: pointer;
+}
+
+#albums-extended .art-details-play-box img {
+    position: relative;
+    top: 5px;
+    margin-right: 7.5px;
+}
+
+#albums-extended .art-details-play {
+    color: #FFC804;
+}
+
+#albums-extended .art-details-favorite {
+    color: #132F40;
+}
+
+#albums-extended .art-details-favorite-box {
+    padding: 16px 47.5px 16px 35.99px;
+    border: 2px solid #FFC804;
+    border-radius: 8px;
+}
+
+#albums-extended .art-details-favorite-box img {
+    position: relative;
+    top: 5px;
+    margin-right: 7.5px;
+}
+
+#albums-extended .art-details-desc {
+    width: 532px;
+}
+
+#albums-extended .albums-extended-bottom {
+    clear: both;
+    margin-left: 52px;
+    padding-bottom: 174px;
+}
+
+#albums-extended .albums-extended-bottom p {
+    padding-bottom: 43px;
+}
+
+#albums-extended .albums-extended-bottom p, .art-details-title {
+    font-size: 27.34px;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 700;
+}
+
+#albums-extended .albums-extended-bottom img {
+    width: 1008px;
+}

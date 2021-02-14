@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Browse from "../assets/img/browse.png";
 import Albums from "../assets/img/albums.png";
@@ -6,9 +6,9 @@ import Artists from "../assets/img/artists.png";
 import Favorites from "../assets/img/favorites.png";
 import "../assets/css/AlbumsMenu.css";
 
-let AlbumsMenu = () => {
+const AlbumsMenu = () => {
   return (
-    <div className="dashboard">
+    <div id="albums-dashboard">
       <section className="dashboard-main">
         <div className="dashboard-nav">
           <img src={Browse} />
@@ -40,6 +40,6 @@ let AlbumsMenu = () => {
       </section>
     </div>
   );
-}
+};
 
 export default AlbumsMenu;

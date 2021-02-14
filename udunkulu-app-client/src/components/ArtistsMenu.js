@@ -8,7 +8,7 @@ import "../assets/css/ArtistsMenu.css";
 
 let ArtistsMenu = () => {
   return (
-    <div className="dashboard">
+    <div id="artists-dashboard">
       <section className="dashboard-main">
         <div className="dashboard-nav">
           <img src={Browse} />
@@ -40,6 +40,6 @@ let ArtistsMenu = () => {
       </section>
     </div>
   );
-}
+};
 
 export default ArtistsMenu;

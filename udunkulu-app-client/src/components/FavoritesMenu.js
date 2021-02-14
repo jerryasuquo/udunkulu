@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Browse from "../assets/img/browse.png";
 import Albums from "../assets/img/albums.png";
@@ -8,7 +8,7 @@ import "../assets/css/FavoritesMenu.css";
 
 let FavoritesMenu = () => {
   return (
-    <div className="dashboard">
+    <div class="dashboard">
       <section className="dashboard-main">
         <div className="dashboard-nav">
           <img src={Browse} />
@@ -40,6 +40,6 @@ let FavoritesMenu = () => {
       </section>
     </div>
   );
-}
+};
 
 export default FavoritesMenu;

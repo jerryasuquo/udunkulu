@@ -1,3 +1,8 @@
+/* #albums {
+    position: absolute;
+    top: 300px;
+}
+
 #albums .card-main-topmost {
     margin-top: 10px;
 }
@@ -41,4 +46,37 @@
 
 #albums .card-next-btn:hover {
     cursor: pointer;
+}
+
+#albums .link-extended {
+    cursor: default;
+} */
+
+#albums {
+    position: relative;
+    margin-left: 295px;
+    padding-top: 5px;
+    padding-bottom: 137px;
+}
+
+#albums p {
+    padding: 48px 0 0 0;
+    font-size: 27.34px;
+    font-family: 'PT Sans',
+        sans-serif;
+    font-weight: bold;
+}
+
+/* external css: flickity.css */
+
+.gallery {
+    width: 96%;
+}
+
+.gallery-cell {
+    width: 25%;
+    margin-right: -30px;
+    height: 325px;
+    position: absolute;
+    bottom: -33px;
 }
