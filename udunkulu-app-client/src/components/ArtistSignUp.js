@@ -52,19 +52,17 @@ let ArtistSignUp = () => {
       },
       'body': JSON.stringify({...user})
     })
-    .then((res) => { return res.json()})
+    .then((res) => { return res.json() })
     .then((res) => {if (!res.success) {
-      console.log(res);
       setState({...state, res: res.message});
       loaderRef.current.setAttribute('class', 'none')
     } else {
-      loaderRef.current.setAttribute('class', 'none')
-      displaySigninModal();
+      window.location = '/upload';
       }
     })
     .catch((e) => {
-      console.log(e.message);
       setState({...state, res: 'Failed to signup. Try again.'});
+      loaderRef.current.setAttribute('class', 'none')
     })
     } else setState({...state, res: 'Passwords do not match'});
     } else setState({...state, res: 'Agree to the Terms and Conditions.'});

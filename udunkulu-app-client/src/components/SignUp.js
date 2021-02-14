@@ -37,7 +37,6 @@ let SignUp = () => {
     })
     .then((res) => { return res.json()})
     .then((res) => {if (!res.success) {
-      console.log(res);
       setState({...state, res: res.message});
       loaderRef.current.setAttribute('class', 'none')
     } else {
@@ -46,7 +45,7 @@ let SignUp = () => {
       }
     })
     .catch((e) => {
-      console.log(e.message);
+      loaderRef.current.setAttribute('class', 'none')
       setState({...state, res: 'Failed to signup. Try again.'});
     })
   }

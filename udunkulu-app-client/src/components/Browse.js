@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
+import { NavLink } from "react-router-dom";
 import LibraryNav from "./LibraryNav";
 import Dashboard from "./Dashboard";
 import "../assets/css/Browse.css";
@@ -16,7 +17,7 @@ let Browse = ()  => {
           <div className="card-box">
             <img src={NextBtn} className="card-next-btn" />
             <div className="card">
-              <img src={KissDaniel} />
+              <NavLink to='/playlist:1'><img src={KissDaniel} /></NavLink>
               <img src={KissDaniel} />
               <img src={KissDaniel} />
               <img src={KissDaniel} />

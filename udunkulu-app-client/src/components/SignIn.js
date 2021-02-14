@@ -40,12 +40,11 @@ let SignIn = () => {
       this.setState({...state, res: res.message});
       loaderRef.current.setAttribute('class', 'none')
     } else {
-      loaderRef.current.setAttribute('class', 'none')
       window.location = '/browse';
       }
     })
     .catch((e) => {
-      console.log(e.message);
+      loaderRef.current.setAttribute('class', 'none')
       setState({...state, res: 'Failed to login. Try again.'});
     })  
   }
