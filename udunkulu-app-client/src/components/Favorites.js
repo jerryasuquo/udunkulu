@@ -13,7 +13,7 @@ let Favorites = () => {
     <div>
       <LibraryNav />
       <FavoritesMenu />
-      <section className="card-main-topmost">
+      {/* <section className="card-main-topmost">
         <p>Albums</p>
         <div className="card-box">
           <img src={NextBtn} className="card-next-btn" />
@@ -26,7 +26,42 @@ let Favorites = () => {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
+      <div id="favorites">
+        <div className="favorites-top">
+          <p>Your Favorite Albums</p>
+          <div
+            class="gallery js-flickity"
+            data-flickity-options='{ "wrapAround": true }'
+          >
+            <div class="gallery-cell">
+              <Link to="/albums-simisola" className="link-extended">
+                <img src={KissDaniel} />
+              </Link>
+            </div>
+            <div class="gallery-cell">
+              <Link to="/albums-simisola" className="link-extended">
+                <img src={KissDaniel} />
+              </Link>
+            </div>
+            <div class="gallery-cell">
+              <Link to="/albums-simisola" className="link-extended">
+                <img src={KissDaniel} />
+              </Link>
+            </div>
+            <div class="gallery-cell">
+              <Link to="/albums-simisola" className="link-extended">
+                <img src={KissDaniel} />
+              </Link>
+            </div>
+            <div class="gallery-cell">
+              <Link to="/albums-simisola" className="link-extended">
+                <img src={KissDaniel} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <section className="card-main-topmost">
         <p>Tracks</p>

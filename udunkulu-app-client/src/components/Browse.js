@@ -10,7 +10,7 @@ let Browse = () => {
     <div>
       <LibraryNav />
       <Dashboard />
-      <div id="browse">
+      {/* <div id="browse">
         <section className="card-main-topmost">
           <p>Fresh Picks For You</p>
           <div className="card-box">
@@ -71,6 +71,123 @@ let Browse = () => {
             </div>
           </div>
         </section>
+      </div> */}
+      <div id="browse">
+        <div className="browse-top">
+          <p>Fresh Picks For You</p>
+          <div
+            class="gallery js-flickity"
+            data-flickity-options='{ "wrapAround": true }'
+          >
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+          </div>
+        </div>
+        <div className="browse-bottom">
+          <p>Trending</p>
+          <div
+            class="gallery js-flickity"
+            data-flickity-options='{ "wrapAround": true }'
+          >
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+          </div>
+        </div>
+        <div className="browse-bottom">
+          <p>New Releases</p>
+          <div
+            class="gallery js-flickity"
+            data-flickity-options='{ "wrapAround": true }'
+          >
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+          </div>
+        </div>
+        <div className="browse-bottom">
+          <p>Top 100 Hot</p>
+          <div
+            class="gallery js-flickity"
+            data-flickity-options='{ "wrapAround": true }'
+          >
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+          </div>
+        </div>
+        <div className="browse-bottom">
+          <p>Top Artists</p>
+          <div
+            class="gallery js-flickity"
+            data-flickity-options='{ "wrapAround": true }'
+          >
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+            <div class="gallery-cell">
+              <img src={KissDaniel} />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -71,3 +71,33 @@
     max-height: 40px;
     margin-top: 10px;
 }
+
+#favorites {
+    position: relative;
+    margin-left: 295px;
+    padding-top: 5px;
+    padding-bottom: 137px;
+    margin-bottom: 82px;
+}
+
+#favorites p {
+    padding: 25px 0 0 0;
+    font-size: 27.34px;
+    font-family: 'PT Sans',
+        sans-serif;
+    font-weight: bold;
+}
+
+/* external css: flickity.css */
+
+.gallery {
+    width: 96%;
+}
+
+.gallery-cell {
+    width: 25%;
+    margin-right: -30px;
+    height: 325px;
+    position: absolute;
+    bottom: -33px;
+}

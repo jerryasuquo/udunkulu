@@ -124,7 +124,7 @@ section {
 }
 
 #lib-nav .user-select select {
-    background-color: #DCEEF2;
+    background-color: rgba(220, 238, 242, 0);
     border: none;
     border-radius: 0px;
     position: relative;
