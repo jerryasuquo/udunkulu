@@ -1,0 +1,138 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+header#lib-nav-artists {
+    padding: 1.5rem 2.5625rem 0.875rem 2.5625rem;
+    height: 15vh;
+}
+
+#lib-nav-artists nav {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 500;
+}
+
+section {
+    float: left;
+}
+
+#lib-nav-artists .menu i {
+    padding: 0.75rem 1rem 0 0;
+    font-size: 18px;
+    cursor: pointer;
+    color: #000;
+}
+
+#lib-nav-artists .brand {
+    position: relative;
+    top: 5px;
+}
+
+#lib-nav-artists .brand-wrapper img,
+#lib-nav-artists .brand-wrapper p {
+    float: left;
+}
+
+#lib-nav-artists .brand-logo {
+    margin-top: -.5rem;
+}
+
+#lib-nav-artists .brand-text {
+    padding: .5rem 0 0.875rem .5rem;
+    font-family: 'PT Sans',
+        sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: #295773;
+    letter-spacing: 0.5%;
+}
+
+#lib-nav-artists .search form {
+    margin: 0 145px 0 241px;
+}
+
+#lib-nav-artists .search form input {
+    height: 3rem;
+    width: 28.125rem;
+    position: relative;
+    /* left: 76px; */
+    border: none;
+    border-radius: 10px;
+    color: #609bbf66;
+    float: right;
+}
+
+#lib-nav-artists .search form input[placeholder="Search"] {
+    background-color: #F1F0F0;
+    color: #609bbf66;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Open Sans',
+        sans-serif;
+    padding-left: 24.74px;
+}
+
+#lib-nav-artists .search span {
+    background-color: #295773;
+    width: 54px;
+    height: 48px;
+    display: inline-block;
+    position: absolute;
+    margin-left: 397px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+}
+
+#lib-nav-artists .search span i {
+    color: #8FC4D9;
+    font-size: 17.49px;
+    position: relative;
+    top: 15px;
+    left: 17.185px;
+}
+
+#lib-nav-artists .user-main {
+    position: relative;
+    top: 10px;
+}
+
+#lib-nav-artists .user {
+    margin-right: 1.75rem;
+}
+
+#lib-nav-artists .user p {
+    font-size: 17.5px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    color: #295773;
+}
+
+#lib-nav-artists .user p>span {
+    color: #FFC804;
+}
+
+#lib-nav-artists .user-select {
+    margin-top: -10px;
+}
+
+#lib-nav-artists .user-select select {
+    background-color: rgba(220, 238, 242, 0);
+    border: none;
+    border-radius: 0px;
+    position: relative;
+    bottom: 15px;
+    left: 4px;
+    cursor: pointer;
+    width: 0;
+    height: auto;
+}

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Home from "./components/Home";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
@@ -9,6 +9,7 @@ import Artists from "./components/Artists";
 import Favorites from "./components/Favorites";
 import AlbumsExtended from "./components/AlbumsExtended";
 import ArtistsExtended from "./components/ArtistsExtended";
+import ArtistsUpload from "./components/ArtistsUpload";
 import { Switch, Route, useLocation } from "react-router-dom";
 import "./App.css";
 
@@ -20,7 +21,7 @@ let App = () => {
     <div>
       <Switch location={background || location}>
         <Route exact path="/" component={Home} />
-        <Route exact path="/pricing" component={Pricing} />
+        {/* <Route exact path="/pricing" component={Pricing} /> */}
         <Route path="/browse" component={Browse} />
         <Route path="/albums" component={Albums} />
         <Route path="/artists" component={Artists} />

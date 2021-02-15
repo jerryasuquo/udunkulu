@@ -1,0 +1,162 @@
+/* #browse {
+    position: absolute;
+    top: 300px;
+}
+
+#browse .card-main-topmost {
+    margin-top: 10px;
+}
+
+#browse .card-main-topmost,
+.card-main-bottom {
+    padding: 48px 0 0 52px;
+    width: 81vw;
+    float: right;
+    position: relative;
+    bottom: 200px;
+    font-size: 27.34px;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bold;
+}
+
+#browse .card-box {
+    padding: 17px 0;
+    margin-top: 16px;
+}
+
+#browse .card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#browse .card img {
+    margin-right: 16px;
+}
+
+#browse .card img:hover {
+    cursor: pointer;
+}
+
+#browse .card-next-btn {
+    position: absolute;
+    margin-top: 100px;
+    right: 50px;
+}
+
+#browse .card-next-btn:hover {
+    cursor: pointer;
+} */
+
+
+#artists-upload {
+    position: relative;
+    margin-left: 402px;
+    margin-top: 80px;
+    padding: 64px;
+    background-color: #FDFDFD;
+    width: 750px;
+    height: 500px;
+    border-radius: 12px;
+    margin-bottom: 348px;
+}
+
+.slider-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider {
+    display: inline-block;
+    width: 75px;
+    height: 4px;
+    margin-right: 8px;
+}
+
+.slider-one {
+    background-color: #000;
+}
+
+.slider-two,
+.slider-three,
+.slider-four {
+    background-color: #8FC4D9;
+}
+
+.slider-title {
+    margin: 28px 0 32px 0;
+}
+
+.slider-title img {
+    position: relative;
+    top: 7px;
+}
+
+.slider-title span {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'PT Sans', sans-serif;
+    padding-left: 16px;
+}
+
+form.artists-upload-form {
+    width: 33%;
+    float: left;
+    font-family: Poppins;
+    font-size: 14px;
+}
+
+form.artists-upload-form input {
+    width: 412px;
+    height: 48px;
+    border: none;
+    border-radius: 10px;
+    background-color: #F1F0F0;
+    margin-bottom: 16px;
+}
+
+form.artists-upload-form input {
+    padding-left: 22.65px;
+}
+
+.artists-upload-form-label-1,
+.artists-upload-form-label-2 {
+    padding-left: 9.85px;
+}
+
+.artists-upload-form-label-2 {
+    position: relative;
+    bottom: 79px;
+    left: 225px;
+}
+
+.artists-upload-form select {
+    width: 189.99px;
+    float: left;
+}
+
+.artists-upload-form-label-1 select,
+.artists-upload-form-label-2 select {
+    margin-top: 4px;
+}
+
+.clip-art-box {
+    float: right;
+}
+
+.artists-upload-btn {
+    float: right;
+    position: absolute;
+    bottom: 61px;
+    right: 64px;
+    padding: 8px 33px;
+    background-color: #8FC4D9;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Open Sans',
+    sans-serif;
+}

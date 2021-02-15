@@ -77,3 +77,9 @@ html {
 .row-2 .col-2 {
     float: right;
 }
+
+@media screen and (max-width:  1280px) {
+    .hero-img-wrapper {
+        left: 650px;
+    }
+}

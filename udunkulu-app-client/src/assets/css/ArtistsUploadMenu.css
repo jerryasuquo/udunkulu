@@ -1,35 +1,35 @@
-#browse-dashboard {
-    width: 280px;
+#artists-upload-dashboard {
+    width: 285px;
     padding-top: 24px;
     position: fixed;
     z-index: 100;
 }
 
-#browse-dashboard .dashboard-nav {
+#artists-upload-dashboard .dashboard-nav {
     padding: 8px 100px 12px 44px;
     margin-top: 4px;
 }
 
-#browse-dashboard .dashboard-nav:hover {
+#artists-upload-dashboard .dashboard-nav:hover {
     cursor: pointer;
 }
 
-#browse-dashboard .dashboard-browse {
+#artists-upload-dashboard .dashboard-browse {
     background-color: #609BBF;
 }
 
-#browse-dashboard .dashboard-nav img {
+#artists-upload-dashboard .dashboard-nav img {
     width: 24px;
     height: 24px;
     margin-top: 6.5px;
 }
 
-#browse-dashboard .link {
+#artists-upload-dashboard .link {
     text-decoration: none;
     color: #000000;
 }
 
-#browse-dashboard .dashboard-nav span {
+#artists-upload-dashboard .dashboard-nav span {
     margin-left: 12px;
     position: relative;
     bottom: 6.5px;
@@ -38,11 +38,11 @@
     font-weight: 600;
 }
 
-#browse-dashboard .my-music {
+#artists-upload-dashboard .my-music {
     margin: 64px 0 0 0;
 }
 
-#browse-dashboard .my-music p {
+#artists-upload-dashboard .my-music p {
     color: #132F40;
     font-size: 14px;
     font-family: 'Open Sans',
@@ -50,9 +50,10 @@
     font-weight: 600;
 }
 
-#browse-dashboard .my-music p:hover {
+#artists-upload-dashboard .my-music p:hover {
     cursor: default;
 }
+
 /* 
 #browse-dashboard .my-music span {
     position: relative;
