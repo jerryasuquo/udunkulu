@@ -1,3 +1,57 @@
+/* #albums {
+    position: absolute;
+    top: 300px;
+}
+
+#albums .card-main-topmost {
+    margin-top: 10px;
+}
+
+#albums .card-main-topmost,
+#albums .card-main-bottom {
+    padding: 48px 0 0 52px;
+    width: 81vw;
+    float: right;
+    position: relative;
+    top: 0px;
+    font-size: 27.34px;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bold;
+}
+
+#albums .card-box {
+    padding: 17px 0;
+    margin-top: 16px;
+}
+
+#albums .card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#albums .card img {
+    margin-right: 16px;
+}
+
+#albums .card img:hover {
+    cursor: pointer;
+}
+
+#albums .card-next-btn {
+    position: absolute;
+    margin-top: 100px;
+    right: 50px;
+}
+
+#albums .card-next-btn:hover {
+    cursor: pointer;
+}
+
+#albums .link-extended {
+    cursor: default;
+} */
+
 #albums {
     position: relative;
     margin-left: 295px;

@@ -8,7 +8,7 @@ import "../assets/css/FavoritesMenu.css";
 
 let FavoritesMenu = () => {
   return (
-    <div className="dashboard">
+    <div class="dashboard">
       <section className="dashboard-main">
         <div className="dashboard-nav">
           <img src={Browse} />

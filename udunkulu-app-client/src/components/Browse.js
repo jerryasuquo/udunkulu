@@ -14,22 +14,22 @@ let Browse = () => {
         <div className="browse-top">
           <p>Fresh Picks For You</p>
           <div
-            className="gallery js-flickity"
+            class="gallery js-flickity"
             data-flickity-options='{ "wrapAround": true }'
           >
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
           </div>
@@ -37,22 +37,22 @@ let Browse = () => {
         <div className="browse-bottom">
           <p>Trending</p>
           <div
-            className="gallery js-flickity"
+            class="gallery js-flickity"
             data-flickity-options='{ "wrapAround": true }'
           >
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
           </div>
@@ -60,22 +60,22 @@ let Browse = () => {
         <div className="browse-bottom">
           <p>New Releases</p>
           <div
-            className="gallery js-flickity"
+            class="gallery js-flickity"
             data-flickity-options='{ "wrapAround": true }'
           >
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
           </div>
@@ -83,22 +83,22 @@ let Browse = () => {
         <div className="browse-bottom">
           <p>Top 100 Hot</p>
           <div
-            className="gallery js-flickity"
+            class="gallery js-flickity"
             data-flickity-options='{ "wrapAround": true }'
           >
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
           </div>
@@ -106,22 +106,22 @@ let Browse = () => {
         <div className="browse-bottom">
           <p>Top Artists</p>
           <div
-            className="gallery js-flickity"
+            class="gallery js-flickity"
             data-flickity-options='{ "wrapAround": true }'
           >
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <img src={KissDaniel} />
             </div>
           </div>

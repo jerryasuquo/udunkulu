@@ -1,7 +1,7 @@
 import React from "react";
 import LibraryNav from "./LibraryNav";
 import AlbumsMenu from "./AlbumsMenu";
-import { NavLink } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Simisola from "../assets/img/simi.png";
 import FavoriteTrack from "../assets/img/favourite-track.png";
 import LibraryAdd from "../assets/img/library_add.png";
@@ -31,14 +31,10 @@ const AlbumsExtended = () => {
             </p>
             <p className="art-details-link"><a>MORE</a></p>
             <div className="art-details-btns">
-              <NavLink to='/playlist'>
-                <span className="art-details-play-box">
-                  <span><img src={PlayArrow} /></span>
-                  <span className="art-details-play">Play</span>
-                </span>
-              </NavLink>
-              
-              
+              <span className="art-details-play-box">
+                <span>
+                    <img src={PlayArrow} />
+                </span><a className="art-details-play">Play</a></span>
               <span className="art-details-favorite-box">
                 <span>
                     <img src={LibraryAdd} />

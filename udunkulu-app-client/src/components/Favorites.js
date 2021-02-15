@@ -31,30 +31,30 @@ let Favorites = () => {
         <div className="favorites-top">
           <p>Your Favorite Albums</p>
           <div
-            className="gallery js-flickity"
+            class="gallery js-flickity"
             data-flickity-options='{ "wrapAround": true }'
           >
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <Link to="/albums-simisola" className="link-extended">
                 <img src={KissDaniel} />
               </Link>
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <Link to="/albums-simisola" className="link-extended">
                 <img src={KissDaniel} />
               </Link>
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <Link to="/albums-simisola" className="link-extended">
                 <img src={KissDaniel} />
               </Link>
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <Link to="/albums-simisola" className="link-extended">
                 <img src={KissDaniel} />
               </Link>
             </div>
-            <div className="gallery-cell">
+            <div class="gallery-cell">
               <Link to="/albums-simisola" className="link-extended">
                 <img src={KissDaniel} />
               </Link>
