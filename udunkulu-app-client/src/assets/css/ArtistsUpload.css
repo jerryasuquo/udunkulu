@@ -103,7 +103,7 @@
 form.artists-upload-form {
     width: 33%;
     float: left;
-    font-family: Poppins;
+    font-family: 'Poppins', sans-serif;
     font-size: 14px;
 }
 
@@ -158,5 +158,5 @@ form.artists-upload-form input {
     font-size: 14px;
     font-weight: 600;
     font-family: 'Open Sans',
-    sans-serif;
+        sans-serif;
 }
