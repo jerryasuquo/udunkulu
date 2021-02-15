@@ -11,88 +11,35 @@ let Albums = () => {
     <div>
       <LibraryNav />
       <AlbumsMenu />
-      {/* <div id="albums">
-        <section className="card-main-topmost">
-          <p>Your Favorite Albums</p>
-          <div className="card-box">
-            <img src={NextBtn} className="card-next-btn" />
-            <div className="card">
-              <Link to="/albums-simisola" className="link-extended">
-                
-              <Link to="/albums-simisola" className="link-extended">
-                <img src={KissDaniel} />
-              </Link>
-                
-              <Link to="/albums-simisola" className="link-extended">
-                <img src={KissDaniel} />
-              </Link>
-                
-              <Link to="/albums-simisola" className="link-extended">
-                <img src={KissDaniel} />
-              </Link>
-                
-              <Link to="/albums-simisola" className="link-extended">
-                <img src={KissDaniel} />
-              </Link>
-              </Link>
-            </div>
-          </div>
-        </section>
-        <section className="card-main-bottom">
-          <p>Recently Added</p>
-          <div className="card-box">
-            <img src={NextBtn} className="card-next-btn" />
-          </div>
-          <div className="card">
-            <Link to="/albums-simisola" className="link-extended">
-              
-              <Link to="/albums-simisola" className="link-extended">
-                <img src={KissDaniel} />
-              </Link>
-              
-              <Link to="/albums-simisola" className="link-extended">
-                <img src={KissDaniel} />
-              </Link>
-              
-              <Link to="/albums-simisola" className="link-extended">
-                <img src={KissDaniel} />
-              </Link>
-              
-              <Link to="/albums-simisola" className="link-extended">
-                <img src={KissDaniel} />
-              </Link>
-            </Link>
-          </div>
-        </section>
-      </div> */}
+      
       <div id="browse">
         <div className="browse-top">
           <p>Your Favorite Albums</p>
           <div
-            class="gallery js-flickity"
+            className="gallery js-flickity"
             data-flickity-options='{ "wrapAround": true }'
           >
-            <div class="gallery-cell">
+            <div className="gallery-cell">
               <Link to="/albums-simisola" className="link-extended">
                 <img src={KissDaniel} />
               </Link>
             </div>
-            <div class="gallery-cell">
+            <div className="gallery-cell">
               <Link to="/albums-simisola" className="link-extended">
                 <img src={KissDaniel} />
               </Link>
             </div>
-            <div class="gallery-cell">
+            <div className="gallery-cell">
               <Link to="/albums-simisola" className="link-extended">
                 <img src={KissDaniel} />
               </Link>
             </div>
-            <div class="gallery-cell">
+            <div className="gallery-cell">
               <Link to="/albums-simisola" className="link-extended">
                 <img src={KissDaniel} />
               </Link>
             </div>
-            <div class="gallery-cell">
+            <div className="gallery-cell">
               <Link to="/albums-simisola" className="link-extended">
                 <img src={KissDaniel} />
               </Link>
@@ -102,30 +49,30 @@ let Albums = () => {
         <div className="browse-top">
           <p>Recently Added</p>
           <div
-            class="gallery js-flickity"
+            className="gallery js-flickity"
             data-flickity-options='{ "wrapAround": true }'
           >
-            <div class="gallery-cell">
+            <div className="gallery-cell">
               <Link to="/albums-simisola" className="link-extended">
                 <img src={KissDaniel} />
               </Link>
             </div>
-            <div class="gallery-cell">
+            <div className="gallery-cell">
               <Link to="/albums-simisola" className="link-extended">
                 <img src={KissDaniel} />
               </Link>
             </div>
-            <div class="gallery-cell">
+            <div className="gallery-cell">
               <Link to="/albums-simisola" className="link-extended">
                 <img src={KissDaniel} />
               </Link>
             </div>
-            <div class="gallery-cell">
+            <div className="gallery-cell">
               <Link to="/albums-simisola" className="link-extended">
                 <img src={KissDaniel} />
               </Link>
             </div>
-            <div class="gallery-cell">
+            <div className="gallery-cell">
               <Link to="/albums-simisola" className="link-extended">
                 <img src={KissDaniel} />
               </Link>

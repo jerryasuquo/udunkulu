@@ -1,0 +1,54 @@
+.dashboard {
+  width: 230px;
+  padding-top: 24px;
+}
+
+.dashboard-nav {
+  padding: 8px 100px 12px 44px;
+  margin-top: 4px;
+}
+
+.dashboard-nav:hover {
+  cursor: pointer;
+}
+
+.dashboard-nav img {
+  width: 24px;
+  height: 24px;
+  margin-top: 6.5px;
+}
+
+.link {
+  text-decoration: none;
+  color: #000000;
+}
+
+.dashboard-nav span {
+  margin-left: 12px;
+  position: relative;
+  bottom: 6.5px;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+.dashboard-favorites {
+  background: none;
+  position: absolute;
+}
+
+.my-music {
+  margin: 64px 0 0 0;
+}
+
+.my-music p {
+  color: #132F40;
+  font-size: 14px;
+  font-family: 'Open Sans',
+      sans-serif;
+  font-weight: 600;
+}
+
+.my-music p:hover {
+  cursor: default;
+}
