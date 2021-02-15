@@ -9,7 +9,6 @@ import Artists from "./components/Artists";
 import Favorites from "./components/Favorites";
 import AlbumsExtended from "./components/AlbumsExtended";
 import ArtistsExtended from "./components/ArtistsExtended";
-import ArtistsUpload from "./components/ArtistsUpload";
 import { Switch, Route, useLocation } from "react-router-dom";
 import "./App.css";
 
