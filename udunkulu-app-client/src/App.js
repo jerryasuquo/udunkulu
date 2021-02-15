@@ -9,6 +9,8 @@ import Artists from "./components/Artists";
 import Favorites from "./components/Favorites";
 import AlbumsExtended from "./components/AlbumsExtended";
 import ArtistsExtended from "./components/ArtistsExtended";
+import Playlist from "./components/Playlist";
+import ArtistsUpload from "./components/ArtistsUpload";
 import { Switch, Route, useLocation } from "react-router-dom";
 import "./App.css";
 
@@ -20,19 +22,18 @@ let App = () => {
     <div>
       <Switch location={background || location}>
         <Route exact path="/" component={Home} />
-        <Route exact path="/pricing" component={Pricing} />
         <Route path="/browse" component={Browse} />
         <Route path="/albums" component={Albums} />
         <Route path="/artists" component={Artists} />
         <Route path="/favorites" component={Favorites} />
         <Route path="/albums-simisola" component={AlbumsExtended} />
         <Route path="/artists-davido" component={ArtistsExtended} />
+        <Route path="/playlist" component={Playlist} />
+        <Route path="/upload" component={ArtistsUpload} />
       </Switch>
       {background && <Route exact path="/signup" children={<SignUp />} />}
       {background && <Route exact path="/signin" children={<SignIn />} />}
-      {background && (
-        <Route exact path="/artists-signup" children={<ArtistSignUp />} />
-      )}
+      {background && (<Route exact path="/artists-signup" children={<ArtistSignUp />} />)}
     </div>
   );
 };
