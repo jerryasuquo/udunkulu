@@ -20,7 +20,6 @@ let App = () => {
     <div>
       <Switch location={background || location}>
         <Route exact path="/" component={Home} />
-        <Route exact path="/pricing" component={Pricing} />
         <Route path="/browse" component={Browse} />
         <Route path="/albums" component={Albums} />
         <Route path="/artists" component={Artists} />
