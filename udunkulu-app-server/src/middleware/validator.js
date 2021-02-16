@@ -1,6 +1,7 @@
 const User = require('../api/models/user.model');
+const Artist = require('../api/models/artist.model');
 
-module.exports = (req, res, next) => {
+module.exports = async (req, res, next) => {
   const { email, password } = req.body;
   if (!email) {
     return res.status(400).json({
@@ -12,14 +13,35 @@ module.exports = (req, res, next) => {
       error: 'Password is required',
     });
   }
-  return User.findOne({
-    email,
-  }).then((user) => {
-    if (user) {
-      return res.status(400).json({
-        error: 'User with same email already exist',
-      });
-    }
-    return next();
-  });
+  const user = await User.find({ email });
+  const artist = await Artist.findOne({ email });
+  const emailExist = user !== null && artist !== null;
+  if (emailExist) {
+    return res.status(400).json({
+      success: false,
+      error: 'User with same email already exist',
+    });
+  }
+
+  return next();
+
+  // return next();
+  // return User.findOne({
+  //   email,
+  // }).then((user) => {
+  //   if (user) {
+  //     Artist.findOne({
+  //       email,
+  //     }).then((artist) => {
+  //       if (artist) {
+  //         return res.status(400).json({
+  //           success: false,
+  //           error: 'User with same email already exist',
+  //         });
+  //       }
+  //       return next();
+  //     });
+  //   }
+  //   return next();
+  // });
 };

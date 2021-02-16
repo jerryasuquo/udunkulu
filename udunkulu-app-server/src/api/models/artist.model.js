@@ -15,13 +15,24 @@ const albumSchema = new mongoose.Schema({
 });
 
 const artistSchema = new mongoose.Schema({
-  name: {
+  fullname: {
     type: String,
     require: true,
   },
+  email: {
+    type: String,
+  },
+  password: {
+    type: String,
+  },
+  stageName: {
+    type: String,
+  },
+  category: { // TODO: add an enum field for ctegory
+    type: String,
+  },
   details: {
     type: String,
-    required: true,
   },
   followers_count: {
     type: Number,
