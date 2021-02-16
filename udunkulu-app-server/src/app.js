@@ -25,10 +25,12 @@ app.use(compression());
 app.use(helmet());
 
 // routes
-const usersRouter = require('./api/routes/auth.route');
+const usersRouter = require('./api/routes/user.route');
 const indexRouter = require('./api/routes/index.route');
+const artistRouter = require('./api/routes/artist.route.js');
 
-app.use('/api/v1/auth', usersRouter);
+app.use('/api/v1/user', usersRouter);
+app.use('/api/v1/artist', artistRouter);
 
 // wildcart route
 app.use('/', indexRouter);
