@@ -27,7 +27,7 @@ let SignIn = () => {
     loaderRef.current.setAttribute('class', 'loader');
     let user = {email: state.email, password: state.password};
 
-    fetch('https://udunkulu.herokuapp.com/api/v1/login',{
+    fetch('https://udunkulu.herokuapp.com/api/v1/user/login',{
       'method': 'POST',
       'headers': {
         'content-type': 'application/json'
@@ -36,14 +36,14 @@ let SignIn = () => {
     })
     .then((res) => { return res.json()})
     .then((res) => {if (!res.success) {
-      console.log(res.message);
-      this.setState({...state, res: res.message});
+      setState({...state, res: res.message ? res.message : res.error});
       loaderRef.current.setAttribute('class', 'none')
     } else {
       window.location = '/browse';
       }
     })
     .catch((e) => {
+      console.log(e);
       loaderRef.current.setAttribute('class', 'none')
       setState({...state, res: 'Failed to login. Try again.'});
     })  
@@ -72,8 +72,8 @@ let SignIn = () => {
           <p>Dear Friend, Welcome Back!!</p>
 
           <form onSubmit={handleSubmit}>
-            <input placeholder='Email' required name='email' value={state.email}  pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum)\b" onChange={handleChange} />
-            <input placeholder='Password' required value={state.password} name='password'  onChange={handleChange} />
+            <input placeholder='Email' required name='email' type="email" value={state.email}  pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum)\b" onChange={handleChange} />
+            <input placeholder='Password' required value={state.password} name='password' type="password" onChange={handleChange} />
             <button>Sign in</button>
           </form>
 

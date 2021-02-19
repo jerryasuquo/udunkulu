@@ -28,7 +28,7 @@ let SignUp = () => {
     loaderRef.current.setAttribute('class', 'loader');
     let user = {email: state.email, fullname: state.fullname, password: state.password};
 
-    fetch('https://udunkulu.herokuapp.com/api/v1/signup',{
+    fetch('https://udunkulu.herokuapp.com/api/v1/user/signup',{
       'method': 'POST',
       'headers': {
         'content-type': 'application/json'
@@ -37,7 +37,7 @@ let SignUp = () => {
     })
     .then((res) => { return res.json()})
     .then((res) => {if (!res.success) {
-      setState({...state, res: res.message});
+      setState({...state, res: res.message ? res.message : res.error});
       loaderRef.current.setAttribute('class', 'none')
     } else {
       loaderRef.current.setAttribute('class', 'none')
@@ -73,8 +73,8 @@ let SignUp = () => {
 
           <form onSubmit={handleSubmit}>
             <input placeholder='Full Name' required name='fullname' value={state.fullname} onChange={handleChange} />
-            <input placeholder='Email Address' required name='email' value={state.email} pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum)\b" onChange={handleChange} />
-            <input placeholder='Password' required name='password' value={state.password} onChange={handleChange} />
+            <input placeholder='Email Address' required name='email' type="email" value={state.email} pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum)\b" onChange={handleChange} />
+            <input placeholder='Password' required name='password' type="password" value={state.password} onChange={handleChange} />
             <button>Sign up</button>
           </form>
 

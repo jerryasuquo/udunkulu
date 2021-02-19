@@ -38,14 +38,14 @@ let ArtistSignUp = () => {
     if (state.password === state.confirmPass) {
     loaderRef.current.setAttribute('class', 'loader')
     let user = {
-              email: state.email,
               fullname: state.fullname,
-              password: state.password, 
+              email: state.email,
               stageName: state.stageName,
-              category: state.category
+              category: state.category,
+              password: state.password
             };
 
-    fetch('https://udunkulu.herokuapp.com/api/v1/signup-artists',{
+    fetch('https://udunkulu.herokuapp.com/api/v1/artist/signup',{
       'method': 'POST',
       'headers': {
         'content-type': 'application/json'
@@ -54,7 +54,7 @@ let ArtistSignUp = () => {
     })
     .then((res) => { return res.json() })
     .then((res) => {if (!res.success) {
-      setState({...state, res: res.message});
+      setState({...state, res: res.message ? res.message : res.error});
       loaderRef.current.setAttribute('class', 'none')
     } else {
       window.location = '/upload';
@@ -90,8 +90,8 @@ let ArtistSignUp = () => {
           <p>Welcome Awesome Creative</p>
 
           <form onSubmit={handleSubmit}>
-            <input placeholder='Email Address' required name='email' value={state.email} pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum)\b" onChange={handleChange} />
-            <input placeholder='Full Name' required name='fullname' value={state.fullname} onChange={handleChange} />
+            <input placeholder='Email Address' required name='email' type="email" value={state.email} pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum)\b" onChange={handleChange} />
+            <input placeholder='Full Name' required name='fullname'  value={state.fullname} onChange={handleChange} />
             <input placeholder='Stage Name' required name='stageName' value={state.stageName}  onChange={handleChange} />
             
             <label htmlFor="category" className="label">Artist Category</label>
@@ -104,11 +104,11 @@ let ArtistSignUp = () => {
               <option value="afrofusion">Afrofusion</option>
             </select>
 
-            <input placeholder='Password' required name='password' value={state.password} onChange={handleChange} />
-            <input placeholder='Retype Password' required name='confirmPass' value={state.confirmPass} onChange={handleChange} />
+            <input placeholder='Password' required name='password' type="password" value={state.password} onChange={handleChange} />
+            <input placeholder='Retype Password' required name='confirmPass' type="password" value={state.confirmPass} onChange={handleChange} />
             
             <div className='label flex'>
-              <input type='checkbox' id='agree' name='agree' value={state.agree} onChange={handleChange} />
+              <input type='checkbox' name='agree' value={state.agree} onChange={handleChange} />
               <label htmlFor='agree'>Accept Term and Conditions</label>
             </div>
 
