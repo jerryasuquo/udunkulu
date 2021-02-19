@@ -10,7 +10,7 @@ let LibraryNavArtists = () => {
       <nav>
         <div className="brand">
           <section className="menu">
-            <i class="far fa-bars"></i>
+            <i className="far fa-bars"></i>
           </section>
           <section className="brand-wrapper">
             <Link to="/">
@@ -24,7 +24,7 @@ let LibraryNavArtists = () => {
             <form>
               <input type="search" placeholder="Search" />
               <span>
-                <i class="far fa-search"></i>
+                <i className="far fa-search"></i>
               </span>
             </form>
           </section>
