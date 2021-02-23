@@ -109,4 +109,5 @@
 
 #albums-extended .albums-extended-bottom img {
     width: 1008px;
+    cursor: pointer;
 }

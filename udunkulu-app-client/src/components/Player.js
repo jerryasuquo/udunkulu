@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import src from '../assets/audio/FEM.mp3';
+import React from "react";
 import back from '../assets/img/back.png';
 import play from '../assets/img/play.png';
 import pause from '../assets/img/pause.png';
@@ -13,62 +12,85 @@ import loopOrng from '../assets/img/loop-orange.png';
 import volume from '../assets/img/volume.png';
 import '../assets/css/Player.css';
 
-let Player = (props) => {
+class Player extends React.Component {
 
-  const [state, setState] = useState({
-    playing: props.playing,
-    loop: false,
-    shuffle:false
-  });
-  
-  let handleClickPlay = (e) => {
-    document.getElementById('player').play();
-    setState({...state, playing: true});
+  state = {
+  playing: this.props.playing,
+  title: this.props.title,
+  artist: this.props.artist,
+  loop: false,
+  shuffle: false
   }
 
-  let handleClickPause = (e) => {
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.x != this.props.x) {
+      let audio = document.getElementById('player');
+      audio.play();
+      this.setState({...this.state, playing: true});
+    }
+  }
+
+  handleTogglePlay = (e) => {
+    let audio = document.getElementById('player');
+    if(audio.paused && audio.currentTime > 0 && !audio.ended) {
+      audio.play();
+      this.setState({...this.state, playing: true});
+   } else {
+      audio.pause();
+      this.setState({...this.state, playing: false});
+   }
+  }
+
+  handleToggleNext = (e) => {
     document.getElementById('player').pause();
-    setState({...state, playing: false});
+    let src = e.target.getAttribute('id') == 'back' ? this.props.prevSrc : this.props.nextSrc;
+    document.getElementById('player').setAttribute('src', src);
+    document.getElementById('player').play();
+
+    let title = e.target.getAttribute('id') == 'back' ? this.props.prevTitle : this.props.nextTitle;
+    let artist = e.target.getAttribute('id') == 'back' ? this.props.prevArtist : this.props.nextArtist;
+    this.setState({...this.state, playing: true, title: title, artist: artist});
   }
 
-  let handleClickLoop = (e) => {
+  handleClickLoop = (e) => {
     document.getElementById('player').setAttribute('loop', true);
-    !state.loop ? setState({...state, loop: true}) : setState({...state, loop: false});;
+    !this.state.loop ? this.setState({...this.state, loop: true}) : this.setState({...this.state, loop: false});;
   }
 
-  let handleClickShuffle = (e) => {
-    !state.shuffle ? setState({...state, shuffle: true}) : setState({...state, shuffle: false});
+  handleClickShuffle = (e) => {
+    !this.state.shuffle ? this.setState({...this.state, shuffle: true}) : this.setState({...this.state, shuffle: false});
   }
 
-  return (
-    <footer>
-      <section>
-        <audio id='player' autoPlay>
-          <source src={src} />
-        </audio>
-
-        <div id='control-panel'>
-          <div>
-            <img src={back} alt='Click to play previous' />
-            {!state.playing ? <img src={play} alt='Click to play' onClick={handleClickPlay}/> : <img src={pause} alt='Click to pause' onClick={handleClickPause}/>}
-            <img src={forward} alt='Click to play next' />
+  render() {
+    return (
+      <footer>
+        <section>
+          <audio src={this.props.src} id='player' autoPlay>
+          </audio>
+  
+          <div id='control-panel'>
+            <div>
+              <img src={back} id='back' alt='Click to play previous' onClick={this.handleToggleNext} />
+              {!this.state.playing ? <img src={play} alt='Click to play' onClick={this.handleTogglePlay}/> : <img src={pause} alt='Click to pause' onClick={this.handleTogglePlay}/>}
+              <img id='forward' src={forward} alt='Click to play next' onClick={this.handleToggleNext} />
+            </div>
+            
+            <div>
+              <span></span>
+              <div id='albumInfo'><img src={albumArt} alt='Album art' id='albumArt' /><div><h1>{this.state.title}</h1><p>{this.state.artist}</p></div></div>
+              <ul><li>ABT</li><li>2017</li></ul>
+            </div>
+  
+            <div>
+              <img src={favorites} />
+              <img src={volume} />
+              {!this.state.loop ? <img src={loop} onClick={this.handleClickLoop} alt='Turn on loop' /> : <img src={loopOrng} onClick={this.handleClickLoop} alt='Turn off loop' />}
+              {!this.state.shuffle? <img src={shuffle} onClick={this.handleClickShuffle} alt='Turn on shuffle' /> : <img src={shuffleOrng} onClick={this.handleClickShuffle} alt='Turn on shuffle' />}
+            </div>
           </div>
-          
-          <div>
-            <span></span>
-            <div id='albumInfo'><img src={albumArt} alt='Album art' id='albumArt' /><div><h1>FEM</h1><p>Davido</p></div></div>
-            <ul><li>ABT</li><li>2017</li></ul>
-          </div>
-
-          <div>
-            <img src={favorites} />
-            <img src={volume} />
-            {!state.loop ? <img src={loop} onClick={handleClickLoop} alt='Turn on loop' /> : <img src={loopOrng} onClick={handleClickLoop} alt='Turn off loop' />}
-            {!state.shuffle? <img src={shuffle} onClick={handleClickShuffle} alt='Turn on shuffle' /> : <img src={shuffleOrng} onClick={handleClickShuffle} alt='Turn on shuffle' />}
-          </div>
-        </div>
-      </section>  
-    </footer>);
+        </section>  
+      </footer>);
+  }
 }
 
 export default Player;

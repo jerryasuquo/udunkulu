@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import LibraryNav from "./LibraryNav";
 import ArtistsMenu from "./ArtistsMenu";
+import Player from '../components/Player';
 import { Link } from "react-router-dom";
 import Davido from "../assets/img/davido.png";
 import KissDaniel from "../assets/img/kiss-daniel.png";
+import FavoritesIcon from "../assets/img/favorites.png";
+import More from "../assets/img/more-vert.png";
 import NextBtn from "../assets/img/next-button.png";
 import FavoriteTrack from "../assets/img/favourite-track.png";
 import ArtistsCover from "../assets/img/cover-img.png";
@@ -11,6 +14,19 @@ import PersonAdd from "../assets/img/person_add.png";
 import "../assets/css/ArtistsExtended.css";
 
 const ArtistsExtended = () => {
+
+  const [state, setState] = useState({
+    src: '',
+    playing: false,
+    x: 0
+  });
+
+  let handleClick = (e) => {
+    let src = e.target.getAttribute('data-src');
+    setState({...state, src: src, playing: true, x: state.x + 1});
+    e.stopPropagation();
+  }
+
   return (
     <div>
       <LibraryNav />
@@ -36,14 +52,65 @@ const ArtistsExtended = () => {
               </span>
             </div>
           </div>
+
         </section>
         <section className="artists-extended-bottom">
           <p>Tracks</p>
-          <img src={FavoriteTrack} />
-          <img src={FavoriteTrack} />
-          <img src={FavoriteTrack} />
-          <img src={FavoriteTrack} />
-          <img src={FavoriteTrack} />
+          <div className="tracklist card-box">
+
+          <div className="track">
+              <span>
+                <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
+                <span data-src='/audio/Mama/Mama.mp3' onClick={handleClick}>Mama</span>
+                <span>Kiss Daniel</span>
+                <span>Single</span>
+                <span>2017</span>
+                <img src={FavoritesIcon} />
+                <span>3:23 / 4:03</span>
+                <img src={More} />
+              </span>
+          </div>  
+
+          <div className="track">
+              <span>
+                <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
+                <span data-src='/audio/Mama/Mama.mp3' onClick={handleClick}>Mama</span>
+                <span>Kiss Daniel</span>
+                <span>Single</span>
+                <span>2017</span>
+                <img src={FavoritesIcon} />
+                <span>3:23 / 4:03</span>
+                <img src={More} />
+              </span>
+          </div>  
+
+          <div className="track">
+              <span>
+                <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
+                <span data-src='/audio/Mama/Mama.mp3' onClick={handleClick}>Mama</span>
+                <span>Kiss Daniel</span>
+                <span>Single</span>
+                <span>2017</span>
+                <img src={FavoritesIcon} />
+                <span>3:23 / 4:03</span>
+                <img src={More} />
+              </span>
+          </div>    
+
+          <div className="track">
+              <span>
+                <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
+                <span data-src='/audio/Mama/Mama.mp3' onClick={handleClick}>Mama</span>
+                <span>Kiss Daniel</span>
+                <span>Single</span>
+                <span>2017</span>
+                <img src={FavoritesIcon} />
+                <span>3:23 / 4:03</span>
+                <img src={More} />
+              </span>
+          </div>   
+
+        </div>
           <p className="see-more"><a>SEE MORE</a></p>
         </section>
 
@@ -62,6 +129,8 @@ const ArtistsExtended = () => {
         </div>
       </section>
       </div>
+
+      { state.playing ? <Player src={state.src} playing={state.playing} x={state.x} /> :  '' }
     </div>
   );
 };

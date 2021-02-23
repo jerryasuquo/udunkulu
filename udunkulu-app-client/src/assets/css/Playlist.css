@@ -1,15 +1,15 @@
 #playlist {
   display: flex;
+  width: 100%;
   max-height: 100vh;
-  position: relative;
-  top: -1vh;
+  position: fixed;
+  left: 230px;
   font-family: sans-serif;
 }
 
 .album-art {
-  position: fixed;
   right: 0;
-  width: 30%;
+  width: 35%;
   height: 101vh;
   background:  linear-gradient(180.38deg, #000000 0%, rgba(0, 0, 0, 0.53) 80%), url('../img/album-art.png');
   color: white;
@@ -48,12 +48,16 @@
   padding: 0 10px;
 }
 
+.list-container {
+  width: 50%;
+}
+
 .list {
-  width: 60%;
+  position: relative;
+  width: 100%;
   height: 101vh;
   background: #8FC4D9;
   color: #295773;
-  position: fixed;
 }
 
 .list h1 {
@@ -61,6 +65,7 @@
   font-size: 25px;
   color: black;
   font-weight: 400;
+  overflow-x: hidden;
 }
 
 .flexBox p {
@@ -83,5 +88,7 @@
 }
 
 .list > div {
-  overflow-y: scroll;
+  overflow-y: overlay;
+  overflow-x: hidden;
+  height: 65vh;
 }

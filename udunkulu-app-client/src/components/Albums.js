@@ -3,8 +3,7 @@ import LibraryNav from "./LibraryNav";
 import AlbumsMenu from "./AlbumsMenu";
 import "../assets/css/Albums.css";
 import KissDaniel from "../assets/img/kiss-daniel.png";
-import NextBtn from "../assets/img/next-button.png";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 let Albums = () => {
   return (

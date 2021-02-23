@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import LibraryNav from "./LibraryNav";
 import AlbumsMenu from "./AlbumsMenu";
+import Player from '../components/Player';
 import { NavLink } from "react-router-dom";
 import Simisola from "../assets/img/simi.png";
 import FavoriteTrack from "../assets/img/favourite-track.png";
@@ -9,6 +10,18 @@ import PlayArrow from "../assets/img/play_arrow.png";
 import "../assets/css/AlbumsExtended.css";
 
 const AlbumsExtended = () => {
+  const [state, setState] = useState({
+    src: '',
+    playing: false,
+    x: 0
+  });
+
+  let handleClick = (e) => {
+    let src = e.target.getAttribute('data-src');
+    setState({...state, src: src, playing: true, x: state.x + 1});
+    e.stopPropagation();
+  }
+
   return (
     <div>
       <LibraryNav />
@@ -50,15 +63,17 @@ const AlbumsExtended = () => {
         </section>
         <section className="albums-extended-bottom">
           <p>Tracks</p>
-          <img src={FavoriteTrack} />
-          <img src={FavoriteTrack} />
-          <img src={FavoriteTrack} />
-          <img src={FavoriteTrack} />
-          <img src={FavoriteTrack} />
-          <img src={FavoriteTrack} />
-          <img src={FavoriteTrack} />
+          <img src={FavoriteTrack} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
+          <img src={FavoriteTrack} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
+          <img src={FavoriteTrack} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
+          <img src={FavoriteTrack} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
+          <img src={FavoriteTrack} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
+          <img src={FavoriteTrack} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
+          <img src={FavoriteTrack} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
         </section>
       </div>
+
+      { state.playing ? <Player src={state.src} playing={state.playing} x={state.x} /> :  '' }
     </div>
   );
 };

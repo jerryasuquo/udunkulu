@@ -7,7 +7,6 @@
     padding: 48px 0 0 52px;
     width: 81vw;
     float: right;
-    /* height: 100%; */
     position: relative;
     bottom: 200px;
     font-size: 27.34px;
@@ -58,16 +57,17 @@
     border-radius: 10px;
 }
 
-.track > a  {
+.track > span  {
     display: flex;
     justify-content: space-around;
     align-items: center;
     text-decoration: none;
     color: #282424;
     font-size: 14px;
+    cursor: pointer;
 }
 
-.track > a > img:first-of-type {
+.track > span > img:first-of-type {
     max-height: 40px;
     margin-top: 10px;
 }

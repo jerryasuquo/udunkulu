@@ -1,11 +1,24 @@
-import React from "react";
+import React, {useState} from "react";
 import LibraryNav from "./LibraryNav";
 import Dashboard from "./Dashboard";
+import Player from '../components/Player';
 import "../assets/css/Browse.css";
 import KissDaniel from "../assets/img/kiss-daniel.png";
-import NextBtn from "../assets/img/next-button.png";
+
 
 let Browse = () => {
+  const [state, setState] = useState({
+    playing: false,
+    src: '',
+    x: 0
+  })
+
+  let handleClick = (e) => {
+    let src = e.target.getAttribute('data-src');
+    setState({...state, src: src, playing: true, x: state.x + 1});
+    e.stopPropagation();
+  }
+
   return (
     <div>
       <LibraryNav />
@@ -18,19 +31,19 @@ let Browse = () => {
             data-flickity-options='{ "wrapAround": true }'
           >
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
           </div>
         </div>
@@ -41,19 +54,19 @@ let Browse = () => {
             data-flickity-options='{ "wrapAround": true }'
           >
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
           </div>
         </div>
@@ -64,19 +77,19 @@ let Browse = () => {
             data-flickity-options='{ "wrapAround": true }'
           >
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel}  data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
           </div>
         </div>
@@ -87,19 +100,19 @@ let Browse = () => {
             data-flickity-options='{ "wrapAround": true }'
           >
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
           </div>
         </div>
@@ -110,23 +123,25 @@ let Browse = () => {
             data-flickity-options='{ "wrapAround": true }'
           >
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel}  data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} />
+              <img src={KissDaniel} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
             </div>
           </div>
         </div>
       </div>
+
+      { state.playing ? <Player src={state.src} playing={state.playing} x={state.x} /> :  '' }
     </div>
   );
 };
