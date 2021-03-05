@@ -1,6 +1,7 @@
 footer {
   position: fixed;
   width: 100vw;
+  height: 12vh;
   bottom: 0;
   background: #295773;
   display: flex;
@@ -10,6 +11,10 @@ footer {
 footer section {
   width: 80vw;
   border: none;
+}
+
+#control-panel h1 {
+  font-size: 1.5em;
 }
 
 #control-panel {
@@ -23,15 +28,15 @@ footer section {
 #control-panel > div {
   display: flex;
   justify-content: space-between;
-  max-width: 200px;
-  min-width: 130px;
-  align-items: center
+  min-width: 150px;
+  align-items: center;
+  margin-top: 5%;
 }
 
 #control-panel li,  #control-panel ul {
   display: flex;
   padding-right: 10px;
-  align-self: flex-end;
+  align-self: flex-start;
 }
 
 #control-panel > div img {
@@ -42,11 +47,63 @@ footer section {
   margin: 0 0 5px 10px;
 }
 
+#loop-superscript {
+color: #FFC804;
+font-size: 0.8em;
+position: relative;
+left: -3px;
+bottom: 0.5px;
+}
+
+#albumInfo-container {
+  justify-content: center;
+  width: 35%;
+}
+
 #albumInfo {
   display: flex;
+  align-items: center;
 }
 
 #albumArt {
-  width: 35%;
-  margin-right: 5px;
+  width: 16%;
+  margin-right: 10px;
+}
+
+input[type='range'] {
+  height: .3em;
+}
+
+input[type='range']::-webkit-slider-runnable-track, input[type='range']::-moz-range-track {
+  background: #000;
+  border: none;
+}
+
+input[type='range']::-moz-range-progress, input[type='range']::-webkit-progress-value {
+  background: #FFC804;
+}
+
+input[type='range']::-moz-range-thumb, input[type='range']::-webkit-slider-thumb {
+  background: #FFC804;
+}
+
+#timeline {
+  position: fixed;
+  margin-top: 12px;
+  width: 80%;
+}
+
+#volume-container {
+  display: flex;
+}
+
+#volume-range {
+  display: none;
+  transition: display ease 5s;
+  width: 60px;
+  align-self: center;
+}
+
+#volume-container:hover #volume-range {
+  display: inline;
 }

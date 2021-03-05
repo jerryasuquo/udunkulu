@@ -72,9 +72,16 @@
   width: 20%
 }
 
-.flexBox, .flexBox p {
+.flexBox {
   display: flex;
   justify-content: space-between;
+}
+.flexBox p:first-of-type {
+  width: 50%;
+}
+
+.flexBox p > span:first-of-type {
+  margin-right: 20%;
 }
 
 .list li {
@@ -90,5 +97,12 @@
 .list > div {
   overflow-y: overlay;
   overflow-x: hidden;
-  height: 65vh;
+}
+
+.list-longer {
+  height: 70vh;
+}
+
+.list-shorter {
+  height: 60vh;
 }
