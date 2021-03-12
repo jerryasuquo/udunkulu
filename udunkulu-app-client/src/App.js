@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import Home from "./components/Home";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
@@ -11,13 +12,17 @@ import AlbumsExtended from "./components/AlbumsExtended";
 import ArtistsExtended from "./components/ArtistsExtended";
 import Playlist from "./components/Playlist";
 import ArtistsUpload from "./components/ArtistsUpload";
+import Player from "./components/Player";
 import { Switch, Route, useLocation } from "react-router-dom";
 import "./App.css";
+
+const selectPlayerDeets = (state) => state.playerDeets;
 
 let App = () => {
   const location = useLocation();
   const background = location.state && location.state.background;
-
+  let playerDeets = useSelector(selectPlayerDeets);
+  console.log(playerDeets);
   return (
     <div>
       <Switch location={background || location}>
@@ -34,6 +39,7 @@ let App = () => {
       {background && <Route exact path="/signup" children={<SignUp />} />}
       {background && <Route exact path="/signin" children={<SignIn />} />}
       {background && (<Route exact path="/artists-signup" children={<ArtistSignUp />} />)}
+      {playerDeets.playing ? <Player x={playerDeets.x} /> : ''}
     </div>
   );
 };

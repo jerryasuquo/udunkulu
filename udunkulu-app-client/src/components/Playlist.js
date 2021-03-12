@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from 'react';
+import { useDispatch } from 'react-redux';
+import {replacePlaylist} from '../redux/actions/replacePlaylist';
 import LibraryNav from '../components/LibraryNav';
 import PlaylistMenu from '../components/PlaylistMenu';
 import Player from '../components/Player';
@@ -6,13 +8,15 @@ import playIcon from '../assets/img/play-icon.png';
 import line from '../assets/img/line.png';
 import '../assets/css/Playlist.css';
 
-let Playlist = () => {
 
+//Playlist Component
+let Playlist = () => {
+  const dispatch = useDispatch();
+  const componentRef = useRef(false);
   const [state, setState] = useState({
     src: '',
     title: '',
     artist: '',
-
     deetsList: [
       {title: 'FEM', src: '/audio/ABetterTime/FEM.mp3', artist: 'Davido', cover: '/audio/ABetterTime/fem-album-art.png', album: 'ABT', releaseDate: '2017'},
       {title: 'Jowo', src: '/audio/ABetterTime/Jowo.mp3', artist: 'Davido', cover: '/audio/ABetterTime/fem-album-art.png', album: 'ABT', releaseDate: '2017'},
@@ -32,26 +36,25 @@ let Playlist = () => {
       {title: 'Fade', src: '/audio/ABetterTime/Fade.mp3', artist: 'Davido, Bella Shmurda', cover: '/audio/ABetterTime/fem-album-art.png', album: 'ABT', releaseDate: '2017'},
       {title: 'On My Way', src: '/audio/ABetterTime/OnMyWay.mp3', artist: 'Davido, Sauti Sol', cover: '/audio/ABetterTime/fem-album-art.png', album: 'ABT', releaseDate: '2017'},
     ],
-
     playing: false,
     index: 0,
     x: 0
   });
 
-  let handleClick = (e) => {
+  useEffect(() => {
+    componentRef.current ? dispatch(replacePlaylist(state)) : componentRef.current = true;  
+  })
+
+  let handleClick = (e, props) => {
     let deetsList = state.deetsList;
     let dataIndex = e.target.getAttribute('data-index');
     dataIndex = Number(dataIndex);
+
     let src = deetsList[dataIndex].src;
-
     let title = deetsList[dataIndex].title;
-
     let artist = deetsList[dataIndex].artist;
-
     let cover = deetsList[dataIndex].cover;
-
     let album = deetsList[dataIndex].album;
-
     let releaseDate = deetsList[dataIndex].releaseDate;
 
     setState({
@@ -59,6 +62,7 @@ let Playlist = () => {
       artist: artist, playing: true, x: state.x + 1,
       index: dataIndex, album: album, releaseDate: releaseDate
     });
+    
     document.getElementById('list').setAttribute('class', 'list-shorter');
   }
 
@@ -103,7 +107,7 @@ let Playlist = () => {
         </section>
       </div>
 
-      {state.playing ? 
+      {/*{state.playing ? 
       <Player 
         deetsList={state.deetsList} playing={state.playing} 
         cover={state.cover} title={state.title} artist={state.artist}
@@ -111,7 +115,7 @@ let Playlist = () => {
         album={state.album} album={state.album} releaseDate={state.releaseDate}
       /> 
       :  
-      ''}
+      ''}*/}
     </div>
   );
 }

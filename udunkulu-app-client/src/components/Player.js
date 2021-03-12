@@ -25,6 +25,7 @@ class Player extends React.Component {
   cover: this.props.cover,
   releaseDate: this.props.releaseDate,
   album: this.props.album,
+
   muted: false,
   volume: 0.5,
   duration: 0,
@@ -221,7 +222,8 @@ class Player extends React.Component {
             </div>
           </div>
         </section>  
-      </footer>);
+      </footer>
+    );
   }
 }
 
