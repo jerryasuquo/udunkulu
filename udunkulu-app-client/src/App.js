@@ -22,7 +22,7 @@ let App = () => {
   const location = useLocation();
   const background = location.state && location.state.background;
   let playerDeets = useSelector(selectPlayerDeets);
-  console.log(playerDeets);
+  //console.log(playerDeets);
   return (
     <div>
       <Switch location={background || location}>
@@ -39,7 +39,13 @@ let App = () => {
       {background && <Route exact path="/signup" children={<SignUp />} />}
       {background && <Route exact path="/signin" children={<SignIn />} />}
       {background && (<Route exact path="/artists-signup" children={<ArtistSignUp />} />)}
-      {playerDeets.playing ? <Player x={playerDeets.x} /> : ''}
+      {playerDeets.playing ? 
+      <Player 
+        x={playerDeets.x} src={playerDeets.src} title={playerDeets.title} artist={playerDeets.artist} 
+        deetsList={playerDeets.deetsList} playing={playerDeets.playing} index={playerDeets.index}
+        cover={playerDeets.cover} releaseDate={playerDeets.releaseDate} album={playerDeets.album}
+      /> 
+      : ''}
     </div>
   );
 };

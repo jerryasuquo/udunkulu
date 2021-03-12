@@ -13,6 +13,7 @@ import loopOrng from '../assets/img/loop-orange.png';
 import volume from '../assets/img/volume.png';
 import '../assets/css/Player.css';
 
+
 class Player extends React.Component {
 
   state = {
@@ -23,9 +24,8 @@ class Player extends React.Component {
   title: this.props.title,
   artist: this.props.artist,
   cover: this.props.cover,
-  releaseDate: this.props.releaseDate,
   album: this.props.album,
-
+  releaseDate: this.props.releaseDate,
   muted: false,
   volume: 0.5,
   duration: 0,
@@ -40,8 +40,8 @@ class Player extends React.Component {
       audio.play();
       this.setState({
         ...this.state, playing: true, index: this.props.index, src: this.props.src,
-        artist: this.props.artist, title: this.props.title, cover: this.props.cover,
-        album: this.props.album, releaseDate: this.props.releaseDate, deetsList: this.props.deetsList
+        artist: this.props.artist, title: this.props.title, deetsList: this.props.deetsList,
+        cover: this.props.cover, album: this.props.album, releaseDate: this.props.releaseDate,
       });
     }
   }
@@ -51,10 +51,10 @@ class Player extends React.Component {
     if(audio.paused && audio.currentTime > 0 && !audio.ended) {
       audio.play();
       this.setState({...this.state, playing: true});
-   } else {
-      audio.pause();
-      this.setState({...this.state, playing: false});
-   }
+    } else {
+        audio.pause();
+        this.setState({...this.state, playing: false});
+      }
   }
 
   handleToggleNext = (e) => {
@@ -64,7 +64,7 @@ class Player extends React.Component {
     if(e.target.getAttribute('id') == 'back') {
       this.props.deetsList[this.state.index - 1] ? this.state.index-- : this.state.index = this.props.deetsList.length - 1; 
     } else {
-      this.props.deetsList[this.state.index + 1] ? this.state.index++ : this.state.index = 0; 
+        this.props.deetsList[this.state.index + 1] ? this.state.index++ : this.state.index = 0; 
       }     
     
     //Sets new src to play current song
@@ -218,7 +218,11 @@ class Player extends React.Component {
                 </div>
               }
 
-              {!this.state.shuffle? <img src={shuffle} onClick={this.handleClickShuffle} alt='Turn on shuffle' /> : <img src={shuffleOrng} onClick={this.handleClickShuffle} alt='Turn on shuffle' />}
+              {!this.state.shuffle ? 
+                <img src={shuffle} onClick={this.handleClickShuffle} alt='Turn on shuffle' /> 
+              : 
+                <img src={shuffleOrng} onClick={this.handleClickShuffle} alt='Turn on shuffle' />
+              }
             </div>
           </div>
         </section>  
@@ -227,4 +231,4 @@ class Player extends React.Component {
   }
 }
 
-export default Player;
+export default (Player);
