@@ -162,9 +162,9 @@ class Player extends React.Component {
   }
 
   handleVolumeChange = (e) => {
-    let volume = e.target.value;
-    this.setState({...this.state, volume: volume});
-    document.getElementById('player').volume = this.state.volume;
+    let volume = Number(e.target.value);
+    volume === 0 ? this.setState({...this.state, volume: volume, muted: true}) : this.setState({...this.state, volume: volume, muted: false});
+    document.getElementById('player').volume = this.state.volume;  
   }
 
   handleToggleMute = (e) => {
