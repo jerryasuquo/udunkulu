@@ -93,7 +93,7 @@
 
 #albums-extended .albums-extended-bottom {
     clear: both;
-    margin-left: 52px;
+    margin-left: 22px;
     padding-bottom: 174px;
 }
 
@@ -110,4 +110,9 @@
 #albums-extended .albums-extended-bottom img {
     width: 1008px;
     cursor: pointer;
+}
+
+.albums-extended-list-shorter {
+    overflow-y: overlay;
+    height: 80vh;
 }

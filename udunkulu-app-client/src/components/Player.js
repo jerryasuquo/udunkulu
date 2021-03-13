@@ -189,10 +189,10 @@ class Player extends React.Component {
               <img id='forward' src={forward} alt='Click to play next' onClick={this.handleToggleNext} />
             </div>
             
-            <div id='albumInfo-container'>
+            <section id='albumInfo-container'>
               <div id='albumInfo'><img src={this.state.cover} alt='Album art' id='albumArt' /><div><h1>{this.state.title}</h1><p>{this.state.artist}</p></div></div>
               <ul><li>{this.state.album}</li><li>{this.state.releaseDate}</li></ul>
-            </div>
+            </section>
   
             <div>
 

@@ -4,7 +4,12 @@ import {replacePlaylist} from '../redux/actions/replacePlaylist';
 import LibraryNav from "./LibraryNav";
 import Dashboard from "./Dashboard";
 import "../assets/css/Browse.css";
-import KissDaniel from "../assets/img/kiss-daniel.png";
+import Mama from "../assets/img/mama-cover-art.jpg";
+import Pami from '../assets/img/pami-cover-art.jpg';
+import Nobody from '../assets/img/nobody-cover-art.jpg';
+import JumpingShip from '../assets/img/jumpingShip-cover-art.jpg';
+import ABT from '../assets/img/album-art-smaller.jpg';
+import playCircle from '../assets/img/play-circle.png';
 
 
 let Browse = () => {
@@ -16,14 +21,13 @@ let Browse = () => {
     cover: '',
     album: '',
     releaseDate: '',
-    deetsListOne: [
-      {title: 'Mama', src:'/audio/Mama/Mama.mp3', artist: 'Kiss Daniel', cover: '/audio/Mama/mama-album-art.png', album: '', releaseDate: '2016'},
-      {title: 'Pami', src:'/audio/Pami/Pami.mp3', artist: 'Wizkid, OmahLay, Adekunle Gold', cover: '/audio/Pami/pami-album-art.jpg', album: '', releaseDate: '2020'},
-      {title: 'Nobody', src:'/audio/Nobody/Nobody.mp3', artist: 'Dremo', cover: '/audio/Nobody/nobody-album-art.jpg', album: 'Codename Vol. 1', releaseDate: '2019'},
-      {title: 'Jumping Ship', src:'/audio/JumpingShip/JumpingShip.mp3', artist: 'Amaarae, Kojey Radical, Cruel Santino', cover: '/audio/JumpingShip/jumpingShip-album-art.jpg', album: 'The Angel You Don\'t Know', releaseDate: '2020'},
+    deetsList: [
+      {title: 'Mama', src:'/audio/Mama/Mama.mp3', artist: 'Kiss Daniel', cover: '/audio/Mama/mama-cover-art.png', album: '', releaseDate: '2016'},
+      {title: 'Pami', src:'/audio/Pami/Pami.mp3', artist: 'Wizkid, OmahLay, Adekunle Gold', cover: '/audio/Pami/pami-cover-art.jpg', album: '', releaseDate: '2020'},
+      {title: 'Nobody', src:'/audio/Nobody/Nobody.mp3', artist: 'Dremo', cover: '/audio/Nobody/nobody-cover-art.jpg', album: 'Codename Vol. 1', releaseDate: '2019'},
+      {title: 'Jumping Ship', src:'/audio/JumpingShip/JumpingShip.mp3', artist: 'Amaarae, Kojey Radical, Cruel Santino', cover: '/audio/JumpingShip/jumpingShip-cover-art.jpg', album: 'The Angel You Don\'t Know', releaseDate: '2020'},
       {title: 'The Best', src:'/audio/ABetterTime/TheBest.mp3', artist: 'Davido', cover:'/audio/ABetterTime/fem-album-art.png', album: 'ABT', releaseDate: '2020'},
     ],
-    deetsList: [],
     playing: false,
     index: 0,
     x: 0
@@ -31,21 +35,6 @@ let Browse = () => {
 
   let componentRef = useRef(false);
   useEffect(() => {
-    /*if (componentRef.current) {
-      let deetsList = state.deetsList;
-      let dataIndex = state.index;
-      let src = deetsList[dataIndex].src;
-      let title = deetsList[dataIndex].title;
-      let artist = deetsList[dataIndex].artist;
-      let cover = deetsList[dataIndex].cover;
-      let album = deetsList[dataIndex].album;
-      let releaseDate = deetsList[dataIndex].releaseDate;
-      setState({
-        ...state, src: src, cover: cover, title: title,
-        artist: artist, playing: true, x: state.x + 1,
-        index: dataIndex, album: album, releaseDate: releaseDate
-      })
-    } else componentRef.current = true;*/
     componentRef.current ? dispatch(replacePlaylist(state)) : componentRef.current = true;  
   }//, state.deetsList
   );
@@ -53,19 +42,21 @@ let Browse = () => {
   let handleClick = (e) => {
     let dataIndex = e.target.getAttribute('data-index');
     dataIndex = Number(dataIndex);
-    let deetsListOne = state.deetsListOne;
-    let src = deetsListOne[dataIndex].src;
-    let title = deetsListOne[dataIndex].title;
-    let artist = deetsListOne[dataIndex].artist;
-    let cover = deetsListOne[dataIndex].cover;
-    let album = deetsListOne[dataIndex].album;
-    let releaseDate = deetsListOne[dataIndex].releaseDate;
+    let deetsList = state.deetsList;
+    let src = deetsList[dataIndex].src;
+    let title = deetsList[dataIndex].title;
+    let artist = deetsList[dataIndex].artist;
+    let cover = deetsList[dataIndex].cover;
+    let album = deetsList[dataIndex].album;
+    let releaseDate = deetsList[dataIndex].releaseDate;
     setState({
       ...state, src: src, cover: cover, title: title,
       artist: artist, playing: true, x: state.x + 1,
       index: dataIndex, album: album, releaseDate: releaseDate
     })
     e.stopPropagation();
+
+    document.getElementById('browse').setAttribute('class', 'browse-list-shorter');
   }
 
   let handleListClick = (e) => {
@@ -78,7 +69,7 @@ let Browse = () => {
     <div>
       <LibraryNav />
       <Dashboard />
-      <div id="browse">
+      <div id="browse" className='browse'>
         <div className="browse-top" >
           <p>Fresh Picks For You</p>
           <div
@@ -87,19 +78,26 @@ let Browse = () => {
             data-list-name={"freshPicks"} onClick={handleListClick}
           >
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={0} onClick={handleClick} />
+              <img src={Mama} data-index={0} onClick={handleClick} />
+              <div className="track-info"><div><p>Mama</p><h1>Kiss Daniel</h1></div><img src={playCircle} /></div>
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={1} onClick={handleClick} />
+              <div>
+                <img src={Pami} data-index={1} onClick={handleClick} />
+                <div className="track-info"><div><p>Pami</p><h1>Wizkid</h1></div><img src={playCircle} /></div>
+              </div>
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={2} onClick={handleClick} />
+              <img src={Nobody} data-index={2} onClick={handleClick} />
+              <div className="track-info"><div><p>Nobody</p><h1>Dremo</h1></div><img src={playCircle} /></div>
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={3} onClick={handleClick} />
+              <img src={JumpingShip} data-index={3} onClick={handleClick} />
+              <div className="track-info"><div><p>Jumping Ship</p><h1>Amaarae</h1></div><img src={playCircle} /></div>
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={4} onClick={handleClick} />
+              <img src={ABT} data-index={4} onClick={handleClick} />
+              <div className="track-info"><div><p>The Best</p><h1>Davido</h1></div><img src={playCircle} /></div>
             </div>
           </div>
         </div>
@@ -112,19 +110,26 @@ let Browse = () => {
             data-list-name={"trending"} onClick={handleListClick}
           >
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={0} onClick={handleClick} />
+              <img src={Mama} data-index={0} onClick={handleClick} />
+              <div className="track-info"><div><p>Mama</p><h1>Kiss Daniel</h1></div><img src={playCircle} /></div>
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={1} onClick={handleClick} />
+              <div>
+                <img src={Pami} data-index={1} onClick={handleClick} />
+                <div className="track-info"><div><p>Pami</p><h1>Wizkid</h1></div><img src={playCircle} /></div>
+              </div>
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={2} onClick={handleClick} />
+              <img src={Nobody} data-index={2} onClick={handleClick} />
+              <div className="track-info"><div><p>Nobody</p><h1>Dremo</h1></div><img src={playCircle} /></div>
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={3} onClick={handleClick} />
+              <img src={JumpingShip} data-index={3} onClick={handleClick} />
+              <div className="track-info"><div><p>Jumping Ship</p><h1>Amaarae</h1></div><img src={playCircle} /></div>
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={4} onClick={handleClick} />
+              <img src={ABT} data-index={4} onClick={handleClick} />
+              <div className="track-info"><div><p>The Best</p><h1>Davido</h1></div><img src={playCircle} /></div>
             </div>
           </div>
         </div>
@@ -137,19 +142,26 @@ let Browse = () => {
             data-list-name={"new"} onClick={handleListClick}
           >
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={0} onClick={handleClick} />
+              <img src={Mama} data-index={0} onClick={handleClick} />
+              <div className="track-info"><div><p>Mama</p><h1>Kiss Daniel</h1></div><img src={playCircle} /></div>
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={1} onClick={handleClick} />
+              <div>
+                <img src={Pami} data-index={1} onClick={handleClick} />
+                <div className="track-info"><div><p>Pami</p><h1>Wizkid</h1></div><img src={playCircle} /></div>
+              </div>
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={2} onClick={handleClick} />
+              <img src={Nobody} data-index={2} onClick={handleClick} />
+              <div className="track-info"><div><p>Nobody</p><h1>Dremo</h1></div><img src={playCircle} /></div>
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={3} onClick={handleClick} />
+              <img src={JumpingShip} data-index={3} onClick={handleClick} />
+              <div className="track-info"><div><p>Jumping Ship</p><h1>Amaarae</h1></div><img src={playCircle} /></div>
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={4} onClick={handleClick} />
+              <img src={ABT} data-index={4} onClick={handleClick} />
+              <div className="track-info"><div><p>The Best</p><h1>Davido</h1></div><img src={playCircle} /></div>
             </div>
           </div>
         </div>
@@ -163,19 +175,26 @@ let Browse = () => {
             data-list-name={"hot100"} onClick={handleListClick}
           >
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={0} onClick={handleClick} />
+              <img src={Mama} data-index={0} onClick={handleClick} />
+              <div className="track-info"><div><p>Mama</p><h1>Kiss Daniel</h1></div><img src={playCircle} /></div>
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={1} onClick={handleClick} />
+              <div>
+                <img src={Pami} data-index={1} onClick={handleClick} />
+                <div className="track-info"><div><p>Pami</p><h1>Wizkid</h1></div><img src={playCircle} /></div>
+              </div>
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={2} onClick={handleClick} />
+              <img src={Nobody} data-index={2} onClick={handleClick} />
+              <div className="track-info"><div><p>Nobody</p><h1>Dremo</h1></div><img src={playCircle} /></div>
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={3} onClick={handleClick} />
+              <img src={JumpingShip} data-index={3} onClick={handleClick} />
+              <div className="track-info"><div><p>Jumping Ship</p><h1>Amaarae</h1></div><img src={playCircle} /></div>
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={4} onClick={handleClick} />
+              <img src={ABT} data-index={4} onClick={handleClick} />
+              <div className="track-info"><div><p>The Best</p><h1>Davido</h1></div><img src={playCircle} /></div>
             </div>
           </div>
         </div>
@@ -188,19 +207,26 @@ let Browse = () => {
             data-list-name={"topArtists"} onClick={handleListClick}
           >
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={0} onClick={handleClick} />
+              <img src={Mama} data-index={0} onClick={handleClick} />
+              <div className="track-info"><div><p>Mama</p><h1>Kiss Daniel</h1></div><img src={playCircle} /></div>
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={1} onClick={handleClick} />
+              <div>
+                <img src={Pami} data-index={1} onClick={handleClick} />
+                <div className="track-info"><div><p>Pami</p><h1>Wizkid</h1></div><img src={playCircle} /></div>
+              </div>
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={2} onClick={handleClick} />
+              <img src={Nobody} data-index={2} onClick={handleClick} />
+              <div className="track-info"><div><p>Nobody</p><h1>Dremo</h1></div><img src={playCircle} /></div>
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={3} onClick={handleClick} />
+              <img src={JumpingShip} data-index={3} onClick={handleClick} />
+              <div className="track-info"><div><p>Jumping Ship</p><h1>Amaarae</h1></div><img src={playCircle} /></div>
             </div>
             <div className="gallery-cell">
-              <img src={KissDaniel} data-index={4} onClick={handleClick} />
+              <img src={ABT} data-index={4} onClick={handleClick} />
+              <div className="track-info"><div><p>The Best</p><h1>Davido</h1></div><img src={playCircle} /></div>
             </div>
           </div>
         </div>

@@ -56,17 +56,22 @@ bottom: 0.5px;
 }
 
 #albumInfo-container {
+  display: flex;
   justify-content: center;
-  width: 35%;
+  width: 50%;
+  min-width: 150px;
+  align-items: center;
+  margin-top: 5%;
 }
 
 #albumInfo {
   display: flex;
+  max-width: 60%;
   align-items: center;
 }
 
 #albumArt {
-  width: 16%;
+  width: 12%;
   margin-right: 10px;
 }
 

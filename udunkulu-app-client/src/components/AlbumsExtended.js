@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useDispatch } from 'react-redux';
+import {replacePlaylist} from '../redux/actions/replacePlaylist';
 import LibraryNav from "./LibraryNav";
 import AlbumsMenu from "./AlbumsMenu";
 import Player from '../components/Player';
@@ -10,16 +12,52 @@ import PlayArrow from "../assets/img/play_arrow.png";
 import "../assets/css/AlbumsExtended.css";
 
 const AlbumsExtended = () => {
+  const dispatch = useDispatch();
   const [state, setState] = useState({
     src: '',
+    title: '',
+    artist: '',
+    cover: '',
+    album: '',
+    releaseDate: '',
+    deetsList: [
+      {title: 'Mama', src:'/audio/Mama/Mama.mp3', artist: 'Kiss Daniel', cover: '/audio/Mama/mama-cover-art.png', album: '', releaseDate: '2016'},
+      {title: 'Pami', src:'/audio/Pami/Pami.mp3', artist: 'Wizkid, OmahLay, Adekunle Gold', cover: '/audio/Pami/pami-cover-art.jpg', album: '', releaseDate: '2020'},
+      {title: 'Nobody', src:'/audio/Nobody/Nobody.mp3', artist: 'Dremo', cover: '/audio/Nobody/nobody-cover-art.jpg', album: 'Codename Vol. 1', releaseDate: '2019'},
+      {title: 'Mama', src:'/audio/Mama/Mama.mp3', artist: 'Kiss Daniel', cover: '/audio/Mama/mama-cover-art.png', album: '', releaseDate: '2016'},
+      {title: 'Mama', src:'/audio/Mama/Mama.mp3', artist: 'Kiss Daniel', cover: '/audio/Mama/mama-cover-art.png', album: '', releaseDate: '2016'},
+      {title: 'Mama', src:'/audio/Mama/Mama.mp3', artist: 'Kiss Daniel', cover: '/audio/Mama/mama-cover-art.png', album: '', releaseDate: '2016'},
+      {title: 'Pami', src:'/audio/Pami/Pami.mp3', artist: 'Wizkid, OmahLay, Adekunle Gold', cover: '/audio/Pami/pami-cover-art.jpg', album: '', releaseDate: '2020'},
+      {title: 'Nobody', src:'/audio/Nobody/Nobody.mp3', artist: 'Dremo', cover: '/audio/Nobody/nobody-cover-art.jpg', album: 'Codename Vol. 1', releaseDate: '2019'}
+    ],
     playing: false,
+    index: 0,
     x: 0
   });
 
+  let componentRef = useRef(false);
+  useEffect(() => {
+    componentRef.current ? dispatch(replacePlaylist(state)) : componentRef.current = true;  
+  }//, state.deetsList
+  );
+  
   let handleClick = (e) => {
-    let src = e.target.getAttribute('data-src');
-    setState({...state, src: src, playing: true, x: state.x + 1});
+    let deetsList = state.deetsList;
+    let dataIndex = e.target.getAttribute('data-index');
+    dataIndex = Number(dataIndex);
+    let src = deetsList[dataIndex].src;
+    let title = deetsList[dataIndex].title;
+    let artist = deetsList[dataIndex].artist;
+    let cover = deetsList[dataIndex].cover;
+    let album = deetsList[dataIndex].album;
+    let releaseDate = deetsList[dataIndex].releaseDate;
+    setState({
+      ...state, src: src, cover: cover, title: title,
+      artist: artist, playing: true, x: state.x + 1,
+      index: dataIndex, album: album, releaseDate: releaseDate
+    })
     e.stopPropagation();
+    document.getElementById('albums-extended').setAttribute('class', 'browse-list-shorter');
   }
 
   return (
@@ -63,17 +101,15 @@ const AlbumsExtended = () => {
         </section>
         <section className="albums-extended-bottom">
           <p>Tracks</p>
-          <img src={FavoriteTrack} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
-          <img src={FavoriteTrack} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
-          <img src={FavoriteTrack} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
-          <img src={FavoriteTrack} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
-          <img src={FavoriteTrack} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
-          <img src={FavoriteTrack} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
-          <img src={FavoriteTrack} data-src='/audio/Mama/Mama.mp3' onClick={handleClick} />
+          <img src={FavoriteTrack} data-src='/audio/Mama/Mama.mp3' data-index={0} onClick={handleClick} />
+          <img src={FavoriteTrack} data-src='/audio/Mama/Mama.mp3' data-index={1} onClick={handleClick} />
+          <img src={FavoriteTrack} data-src='/audio/Mama/Mama.mp3' data-index={2} onClick={handleClick} />
+          <img src={FavoriteTrack} data-src='/audio/Mama/Mama.mp3' data-index={3} onClick={handleClick} />
+          <img src={FavoriteTrack} data-src='/audio/Mama/Mama.mp3' data-index={4} onClick={handleClick} />
+          <img src={FavoriteTrack} data-src='/audio/Mama/Mama.mp3' data-index={5} onClick={handleClick} />
+          <img src={FavoriteTrack} data-src='/audio/Mama/Mama.mp3' data-index={6} onClick={handleClick} />
         </section>
       </div>
-
-      { state.playing ? <Player src={state.src} playing={state.playing} x={state.x} /> :  '' }
     </div>
   );
 };
