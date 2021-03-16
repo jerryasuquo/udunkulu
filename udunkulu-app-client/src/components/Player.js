@@ -83,7 +83,7 @@ class Player extends React.Component {
   }
 
 
-  handleEnded = (e) => {
+  handleEnded = () => {
     let audio = document.getElementById('player');
 
     //Sets index to random song's index if in shuffle and not in loop
@@ -93,15 +93,18 @@ class Player extends React.Component {
 
     if (this.state.loop == 2) {
       audio.setAttribute('loop', true);
+      
     }
 
     //Sets index to next song if not in song loop
     if (this.state.loop == 1) {
+      audio.setAttribute('loop', false);
       this.props.deetsList[this.state.index + 1] ? this.state.index++ : this.state.index = 0;
     }
 
     //Sets song to next song if not in playlist loop and stops playlist at last song
     if (this.state.loop == 0) {
+      audio.setAttribute('loop', false);
       if (this.props.deetsList[this.state.index + 1]) {
         this.state.index++;
       } else {
@@ -153,12 +156,17 @@ class Player extends React.Component {
 
   handleTimelineChange = (e) => {
     document.getElementById('player').currentTime = e.target.value;
+    
   }
 
   handleTimeUpdate = (e) => {
     let duration = Math.ceil(e.target.duration);
     let currentTime = e.target.currentTime;
-    this.setState({...this.state, currentTime: currentTime, duration: duration});
+    this.setState({...this.state, currentTime: currentTime, duration: duration, durationUnCeil: e.target.duration});
+
+    if(currentTime > 0 && duration == Math.ceil(currentTime)) {
+      this.handleEnded();
+    }
   }
 
   handleVolumeChange = (e) => {
@@ -175,7 +183,7 @@ class Player extends React.Component {
     return (
       <footer>
         <section>
-          <audio src={this.state.src} id='player' autoPlay muted={this.state.muted} preload='auto' onEnded={this.handleEnded} onPlay={this.handlePlay} onTimeUpdate={this.handleTimeUpdate}>
+          <audio src={this.state.src} id='player' autoPlay muted={this.state.muted} preload='auto'onPlay={this.handlePlay} onTimeUpdate={this.handleTimeUpdate}>
           </audio>
   
           <div id='control-panel'>
